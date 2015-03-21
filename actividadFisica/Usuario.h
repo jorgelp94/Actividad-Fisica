@@ -13,8 +13,8 @@
 @property (strong, nonatomic) NSString *nombreUsuario;
 @property (strong, nonatomic) NSString *matriculaUsuario;
 @property (strong, nonatomic) NSDate *fechaNacimientoUsuario;
-@property float estaturaUsuario;
-@property float pesoUsuario;
-
+@property (strong, nonatomic) NSNumber *estaturaUsuario;
+@property (strong, nonatomic) NSNumber *pesoUsuario;
+@property (strong, nonatomic) NSString *passwordUsuario;
 
 @end

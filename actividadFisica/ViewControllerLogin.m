@@ -34,4 +34,8 @@
 }
 */
 
+- (IBAction)unwindRegistro:(UIStoryboardSegue *)segue {
+    // no hace nada
+}
+
 @end

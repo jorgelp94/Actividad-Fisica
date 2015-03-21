@@ -26,6 +26,11 @@ Usuario *nuevoUsuario;
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quitaTeclado)];
     [self.view addGestureRecognizer:tap];
+    
+    // La aplicación guarda la información cuando se cierra
+    // Esta información se va cargar posteriormente en la vista para modificacion de información
+    UIApplication *app = [UIApplication sharedApplication];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(aplicacionTerminara:) name:UIApplicationDidEnterBackgroundNotification object:app];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,8 +62,13 @@ Usuario *nuevoUsuario;
     [dateFormatter setDateFormat:@"dd-mm-yyyy"];
     
     nuevoUsuario.fechaNacimientoUsuario = [dateFormatter dateFromString:fecha];
-    nuevoUsuario.estaturaUsuario = [self.tfEstatura.text floatValue];
-    nuevoUsuario.pesoUsuario = [self.tfPeso.text floatValue];
+    float estatura = [self.tfEstatura.text floatValue];
+    NSNumber *estatura2 = [[NSNumber alloc] initWithFloat:estatura];
+    nuevoUsuario.estaturaUsuario = estatura2;
+    float peso = [self.tfPeso.text floatValue];
+    NSNumber *peso2 = [[NSNumber alloc] initWithFloat:peso];
+    nuevoUsuario.pesoUsuario = peso2;
+    nuevoUsuario.passwordUsuario = self.tfPassword.text;
     
     // quitar pantalla y pasar a la tabbed view
 }
@@ -83,6 +93,25 @@ Usuario *nuevoUsuario;
 
 - (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (NSString *)dataFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:@"archivoDatos.plist"];
+}
+
+- (void) aplicacionTerminara:(NSNotification *)notification {
+    NSMutableArray *listaDatos = [[NSMutableArray alloc] init];
+    
+    [listaDatos addObject:nuevoUsuario.matriculaUsuario];
+    [listaDatos addObject:nuevoUsuario.passwordUsuario];
+    [listaDatos addObject:nuevoUsuario.nombreUsuario];
+    [listaDatos addObject:nuevoUsuario.fechaNacimientoUsuario];
+    [listaDatos addObject:nuevoUsuario.estaturaUsuario];
+    [listaDatos addObject:nuevoUsuario.pesoUsuario];
+    
+    [listaDatos writeToFile:[self dataFilePath] atomically:YES];
 }
 
 @end
