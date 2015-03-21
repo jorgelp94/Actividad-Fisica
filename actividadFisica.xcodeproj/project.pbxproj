@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F401F7D51ABDF5E400A8F025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7D41ABDF5E400A8F025 /* main.m */; };
+		F401F7D81ABDF5E400A8F025 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7D71ABDF5E400A8F025 /* AppDelegate.m */; };
+		F401F7DB1ABDF5E400A8F025 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7DA1ABDF5E400A8F025 /* FirstViewController.m */; };
+		F401F7DE1ABDF5E500A8F025 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7DD1ABDF5E500A8F025 /* SecondViewController.m */; };
+		F401F7E11ABDF5E500A8F025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F401F7DF1ABDF5E500A8F025 /* Main.storyboard */; };
+		F401F7E31ABDF5E500A8F025 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F401F7E21ABDF5E500A8F025 /* Images.xcassets */; };
+		F401F7E61ABDF5E500A8F025 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F401F7E41ABDF5E500A8F025 /* LaunchScreen.xib */; };
+		F401F7F21ABDF5E500A8F025 /* actividadFisicaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7F11ABDF5E500A8F025 /* actividadFisicaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F401F7EC1ABDF5E500A8F025 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F401F7C71ABDF5E300A8F025 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F401F7CE1ABDF5E400A8F025;
+			remoteInfo = actividadFisica;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F401F7CF1ABDF5E400A8F025 /* actividadFisica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actividadFisica.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F401F7D31ABDF5E400A8F025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F401F7D41ABDF5E400A8F025 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F401F7D61ABDF5E400A8F025 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F401F7D71ABDF5E400A8F025 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F401F7D91ABDF5E400A8F025 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		F401F7DA1ABDF5E400A8F025 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		F401F7DC1ABDF5E500A8F025 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		F401F7DD1ABDF5E500A8F025 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		F401F7E01ABDF5E500A8F025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F401F7E21ABDF5E500A8F025 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F401F7E51ABDF5E500A8F025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F401F7EB1ABDF5E500A8F025 /* actividadFisicaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = actividadFisicaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F401F7F01ABDF5E500A8F025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F401F7F11ABDF5E500A8F025 /* actividadFisicaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = actividadFisicaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F401F7CC1ABDF5E400A8F025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F401F7E81ABDF5E500A8F025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F401F7C61ABDF5E300A8F025 = {
+			isa = PBXGroup;
+			children = (
+				F401F7D11ABDF5E400A8F025 /* actividadFisica */,
+				F401F7EE1ABDF5E500A8F025 /* actividadFisicaTests */,
+				F401F7D01ABDF5E400A8F025 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F401F7D01ABDF5E400A8F025 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F401F7CF1ABDF5E400A8F025 /* actividadFisica.app */,
+				F401F7EB1ABDF5E500A8F025 /* actividadFisicaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F401F7D11ABDF5E400A8F025 /* actividadFisica */ = {
+			isa = PBXGroup;
+			children = (
+				F401F7D61ABDF5E400A8F025 /* AppDelegate.h */,
+				F401F7D71ABDF5E400A8F025 /* AppDelegate.m */,
+				F401F7D91ABDF5E400A8F025 /* FirstViewController.h */,
+				F401F7DA1ABDF5E400A8F025 /* FirstViewController.m */,
+				F401F7DC1ABDF5E500A8F025 /* SecondViewController.h */,
+				F401F7DD1ABDF5E500A8F025 /* SecondViewController.m */,
+				F401F7DF1ABDF5E500A8F025 /* Main.storyboard */,
+				F401F7E21ABDF5E500A8F025 /* Images.xcassets */,
+				F401F7E41ABDF5E500A8F025 /* LaunchScreen.xib */,
+				F401F7D21ABDF5E400A8F025 /* Supporting Files */,
+			);
+			path = actividadFisica;
+			sourceTree = "<group>";
+		};
+		F401F7D21ABDF5E400A8F025 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F401F7D31ABDF5E400A8F025 /* Info.plist */,
+				F401F7D41ABDF5E400A8F025 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F401F7EE1ABDF5E500A8F025 /* actividadFisicaTests */ = {
+			isa = PBXGroup;
+			children = (
+				F401F7F11ABDF5E500A8F025 /* actividadFisicaTests.m */,
+				F401F7EF1ABDF5E500A8F025 /* Supporting Files */,
+			);
+			path = actividadFisicaTests;
+			sourceTree = "<group>";
+		};
+		F401F7EF1ABDF5E500A8F025 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F401F7F01ABDF5E500A8F025 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F401F7CE1ABDF5E400A8F025 /* actividadFisica */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F401F7F51ABDF5E500A8F025 /* Build configuration list for PBXNativeTarget "actividadFisica" */;
+			buildPhases = (
+				F401F7CB1ABDF5E400A8F025 /* Sources */,
+				F401F7CC1ABDF5E400A8F025 /* Frameworks */,
+				F401F7CD1ABDF5E400A8F025 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = actividadFisica;
+			productName = actividadFisica;
+			productReference = F401F7CF1ABDF5E400A8F025 /* actividadFisica.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F401F7EA1ABDF5E500A8F025 /* actividadFisicaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F401F7F81ABDF5E500A8F025 /* Build configuration list for PBXNativeTarget "actividadFisicaTests" */;
+			buildPhases = (
+				F401F7E71ABDF5E500A8F025 /* Sources */,
+				F401F7E81ABDF5E500A8F025 /* Frameworks */,
+				F401F7E91ABDF5E500A8F025 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F401F7ED1ABDF5E500A8F025 /* PBXTargetDependency */,
+			);
+			name = actividadFisicaTests;
+			productName = actividadFisicaTests;
+			productReference = F401F7EB1ABDF5E500A8F025 /* actividadFisicaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F401F7C71ABDF5E300A8F025 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Jorge Luis Perales";
+				TargetAttributes = {
+					F401F7CE1ABDF5E400A8F025 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					F401F7EA1ABDF5E500A8F025 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = F401F7CE1ABDF5E400A8F025;
+					};
+				};
+			};
+			buildConfigurationList = F401F7CA1ABDF5E400A8F025 /* Build configuration list for PBXProject "actividadFisica" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F401F7C61ABDF5E300A8F025;
+			productRefGroup = F401F7D01ABDF5E400A8F025 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F401F7CE1ABDF5E400A8F025 /* actividadFisica */,
+				F401F7EA1ABDF5E500A8F025 /* actividadFisicaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F401F7CD1ABDF5E400A8F025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F401F7E11ABDF5E500A8F025 /* Main.storyboard in Resources */,
+				F401F7E61ABDF5E500A8F025 /* LaunchScreen.xib in Resources */,
+				F401F7E31ABDF5E500A8F025 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F401F7E91ABDF5E500A8F025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F401F7CB1ABDF5E400A8F025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F401F7DE1ABDF5E500A8F025 /* SecondViewController.m in Sources */,
+				F401F7D81ABDF5E400A8F025 /* AppDelegate.m in Sources */,
+				F401F7DB1ABDF5E400A8F025 /* FirstViewController.m in Sources */,
+				F401F7D51ABDF5E400A8F025 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F401F7E71ABDF5E500A8F025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F401F7F21ABDF5E500A8F025 /* actividadFisicaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F401F7ED1ABDF5E500A8F025 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F401F7CE1ABDF5E400A8F025 /* actividadFisica */;
+			targetProxy = F401F7EC1ABDF5E500A8F025 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F401F7DF1ABDF5E500A8F025 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F401F7E01ABDF5E500A8F025 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F401F7E41ABDF5E500A8F025 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F401F7E51ABDF5E500A8F025 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F401F7F31ABDF5E500A8F025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F401F7F41ABDF5E500A8F025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F401F7F61ABDF5E500A8F025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = actividadFisica/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F401F7F71ABDF5E500A8F025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = actividadFisica/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F401F7F91ABDF5E500A8F025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = actividadFisicaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/actividadFisica.app/actividadFisica";
+			};
+			name = Debug;
+		};
+		F401F7FA1ABDF5E500A8F025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = actividadFisicaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/actividadFisica.app/actividadFisica";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F401F7CA1ABDF5E400A8F025 /* Build configuration list for PBXProject "actividadFisica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F401F7F31ABDF5E500A8F025 /* Debug */,
+				F401F7F41ABDF5E500A8F025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F401F7F51ABDF5E500A8F025 /* Build configuration list for PBXNativeTarget "actividadFisica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F401F7F61ABDF5E500A8F025 /* Debug */,
+				F401F7F71ABDF5E500A8F025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F401F7F81ABDF5E500A8F025 /* Build configuration list for PBXNativeTarget "actividadFisicaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F401F7F91ABDF5E500A8F025 /* Debug */,
+				F401F7FA1ABDF5E500A8F025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F401F7C71ABDF5E300A8F025 /* Project object */;
+}
