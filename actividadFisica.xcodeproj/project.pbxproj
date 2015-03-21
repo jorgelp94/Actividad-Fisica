@@ -15,6 +15,8 @@
 		F401F7E31ABDF5E500A8F025 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F401F7E21ABDF5E500A8F025 /* Images.xcassets */; };
 		F401F7E61ABDF5E500A8F025 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F401F7E41ABDF5E500A8F025 /* LaunchScreen.xib */; };
 		F401F7F21ABDF5E500A8F025 /* actividadFisicaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7F11ABDF5E500A8F025 /* actividadFisicaTests.m */; };
+		F401F7FD1ABDFACC00A8F025 /* ViewControllerRegistroCuenta.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7FC1ABDFACC00A8F025 /* ViewControllerRegistroCuenta.m */; };
+		F401F8001ABDFE7200A8F025 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7FF1ABDFE7200A8F025 /* Usuario.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		F401F7EB1ABDF5E500A8F025 /* actividadFisicaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = actividadFisicaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F401F7F01ABDF5E500A8F025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F401F7F11ABDF5E500A8F025 /* actividadFisicaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = actividadFisicaTests.m; sourceTree = "<group>"; };
+		F401F7FB1ABDFACC00A8F025 /* ViewControllerRegistroCuenta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerRegistroCuenta.h; sourceTree = "<group>"; };
+		F401F7FC1ABDFACC00A8F025 /* ViewControllerRegistroCuenta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRegistroCuenta.m; sourceTree = "<group>"; };
+		F401F7FE1ABDFE7200A8F025 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
+		F401F7FF1ABDFE7200A8F025 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,10 @@
 				F401F7DC1ABDF5E500A8F025 /* SecondViewController.h */,
 				F401F7DD1ABDF5E500A8F025 /* SecondViewController.m */,
 				F401F7DF1ABDF5E500A8F025 /* Main.storyboard */,
+				F401F7FE1ABDFE7200A8F025 /* Usuario.h */,
+				F401F7FF1ABDFE7200A8F025 /* Usuario.m */,
+				F401F7FB1ABDFACC00A8F025 /* ViewControllerRegistroCuenta.h */,
+				F401F7FC1ABDFACC00A8F025 /* ViewControllerRegistroCuenta.m */,
 				F401F7E21ABDF5E500A8F025 /* Images.xcassets */,
 				F401F7E41ABDF5E500A8F025 /* LaunchScreen.xib */,
 				F401F7D21ABDF5E400A8F025 /* Supporting Files */,
@@ -225,8 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F401F7DE1ABDF5E500A8F025 /* SecondViewController.m in Sources */,
+				F401F7FD1ABDFACC00A8F025 /* ViewControllerRegistroCuenta.m in Sources */,
 				F401F7D81ABDF5E400A8F025 /* AppDelegate.m in Sources */,
 				F401F7DB1ABDF5E400A8F025 /* FirstViewController.m in Sources */,
+				F401F8001ABDFE7200A8F025 /* Usuario.m in Sources */,
 				F401F7D51ABDF5E400A8F025 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
