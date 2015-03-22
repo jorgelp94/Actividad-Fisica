@@ -15,5 +15,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfVerMilla;
 @property (weak, nonatomic) IBOutlet UITextField *tfVerFlexibilidad;
 
+@property (strong, nonatomic) NSString *abdomin;
+@property (strong, nonatomic) NSString *lag;
+@property (strong, nonatomic) NSString *mill;
+@property (strong, nonatomic) NSString *fl;
+
 @end
 

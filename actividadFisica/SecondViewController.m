@@ -8,6 +8,7 @@
 
 #import "SecondViewController.h"
 #import "ViewControllerRegistroCuenta.h"
+#import "ViewControllerEditarAjustes.h"
 
 @interface SecondViewController ()
 
@@ -33,6 +34,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ViewControllerEditarAjustes *viewEditar = [segue destinationViewController];
+    
+    viewEditar.imagenEd = self.imagenAjustes.image;
+    viewEditar.pesoEd = self.tfPesoAjustes.text;
+}
+
+- (IBAction)unwindEditarAjustes:(UIStoryboardSegue *)segue {
+    self.tfPesoAjustes.text = self.pesoAj;
+    self.imagenAjustes.image = self.imagenAj;
 }
 
 - (NSString *) dataFilePath {

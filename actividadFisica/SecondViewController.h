@@ -17,5 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfEstaturaAjustes;
 @property (weak, nonatomic) IBOutlet UIImageView *imagenAjustes;
 
+@property (strong, nonatomic) NSString *pesoAj;
+@property (strong, nonatomic) UIImage *imagenAj;
+
 @end
 

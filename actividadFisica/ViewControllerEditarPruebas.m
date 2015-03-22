@@ -18,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tfEditaAbdominales.text = self.abs;
+    self.tfEditaLagartijas.text = self.lagar;
+    self.tfEditaMilla.text = self.milla;
+    self.tfEditaFlexibilidad.text = self.flex;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,10 +43,10 @@
     FirstViewController *viewFirst = [segue destinationViewController];
     
     if (sender == self.botonGuardar) {
-        viewFirst.tfVerAbdominales.text = self.tfEditaAbdominales.text;
-        viewFirst.tfVerLagartijas.text = self.tfEditaLagartijas.text;
-        viewFirst.tfVerMilla.text = self.tfEditaMilla.text;
-        viewFirst.tfVerFlexibilidad.text = self.tfEditaFlexibilidad.text;
+        viewFirst.abdomin = self.tfEditaAbdominales.text;
+        viewFirst.lag = self.tfEditaLagartijas.text;
+        viewFirst.mill = self.tfEditaMilla.text;
+        viewFirst.fl = self.tfEditaFlexibilidad.text;
     }
 }
 

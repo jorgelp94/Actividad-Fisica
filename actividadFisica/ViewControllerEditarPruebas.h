@@ -15,4 +15,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfEditaFlexibilidad;
 @property (weak, nonatomic) IBOutlet UIButton *botonGuardar;
 
+@property (strong, nonatomic) NSString *abs;
+@property (strong, nonatomic) NSString *lagar;
+@property (strong, nonatomic) NSString *milla;
+@property (strong, nonatomic) NSString *flex;
+
 @end
