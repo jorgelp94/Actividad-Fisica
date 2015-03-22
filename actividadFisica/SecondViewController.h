@@ -10,6 +10,12 @@
 
 @interface SecondViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *tfNombreAjustes;
+@property (weak, nonatomic) IBOutlet UITextField *tfMatriculaAjustes;
+@property (weak, nonatomic) IBOutlet UITextField *tfEdadAjustes;
+@property (weak, nonatomic) IBOutlet UITextField *tfPesoAjustes;
+@property (weak, nonatomic) IBOutlet UITextField *tfEstaturaAjustes;
+@property (weak, nonatomic) IBOutlet UIImageView *imagenAjustes;
 
 @end
 

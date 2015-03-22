@@ -19,6 +19,8 @@
 		F401F8001ABDFE7200A8F025 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7FF1ABDFE7200A8F025 /* Usuario.m */; };
 		F401F8031ABE13E600A8F025 /* ViewControllerLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F8021ABE13E600A8F025 /* ViewControllerLogin.m */; };
 		F401F8051ABE16D200A8F025 /* logoTec.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F401F8041ABE16D200A8F025 /* logoTec.jpg */; };
+		F401F80C1ABE370300A8F025 /* ViewControllerEditarPruebas.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F80B1ABE370300A8F025 /* ViewControllerEditarPruebas.m */; };
+		F4DE182B1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DE182A1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		F401F8011ABE13E600A8F025 /* ViewControllerLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerLogin.h; sourceTree = "<group>"; };
 		F401F8021ABE13E600A8F025 /* ViewControllerLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLogin.m; sourceTree = "<group>"; };
 		F401F8041ABE16D200A8F025 /* logoTec.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logoTec.jpg; sourceTree = "<group>"; };
+		F401F80A1ABE370300A8F025 /* ViewControllerEditarPruebas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEditarPruebas.h; sourceTree = "<group>"; };
+		F401F80B1ABE370300A8F025 /* ViewControllerEditarPruebas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEditarPruebas.m; sourceTree = "<group>"; };
+		F4DE18291ABE4D9600D6DA85 /* ViewControllerEditarAjustes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEditarAjustes.h; sourceTree = "<group>"; };
+		F4DE182A1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEditarAjustes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +105,12 @@
 				F401F7D71ABDF5E400A8F025 /* AppDelegate.m */,
 				F401F7D91ABDF5E400A8F025 /* FirstViewController.h */,
 				F401F7DA1ABDF5E400A8F025 /* FirstViewController.m */,
+				F401F80A1ABE370300A8F025 /* ViewControllerEditarPruebas.h */,
+				F401F80B1ABE370300A8F025 /* ViewControllerEditarPruebas.m */,
 				F401F7DC1ABDF5E500A8F025 /* SecondViewController.h */,
 				F401F7DD1ABDF5E500A8F025 /* SecondViewController.m */,
+				F4DE18291ABE4D9600D6DA85 /* ViewControllerEditarAjustes.h */,
+				F4DE182A1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m */,
 				F401F7DF1ABDF5E500A8F025 /* Main.storyboard */,
 				F401F8041ABE16D200A8F025 /* logoTec.jpg */,
 				F401F7FE1ABDFE7200A8F025 /* Usuario.h */,
@@ -245,11 +255,13 @@
 			files = (
 				F401F8031ABE13E600A8F025 /* ViewControllerLogin.m in Sources */,
 				F401F7DE1ABDF5E500A8F025 /* SecondViewController.m in Sources */,
+				F401F80C1ABE370300A8F025 /* ViewControllerEditarPruebas.m in Sources */,
 				F401F7FD1ABDFACC00A8F025 /* ViewControllerRegistroCuenta.m in Sources */,
 				F401F7D81ABDF5E400A8F025 /* AppDelegate.m in Sources */,
 				F401F7DB1ABDF5E400A8F025 /* FirstViewController.m in Sources */,
 				F401F8001ABDFE7200A8F025 /* Usuario.m in Sources */,
 				F401F7D51ABDF5E400A8F025 /* main.m in Sources */,
+				F4DE182B1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +452,7 @@
 				F401F7F71ABDF5E500A8F025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F401F7F81ABDF5E500A8F025 /* Build configuration list for PBXNativeTarget "actividadFisicaTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +461,7 @@
 				F401F7FA1ABDF5E500A8F025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

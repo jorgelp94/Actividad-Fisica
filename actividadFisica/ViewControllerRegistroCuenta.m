@@ -54,23 +54,32 @@ Usuario *nuevoUsuario;
 }
 
 - (IBAction)presionoCrear:(UIButton *)sender {
-    nuevoUsuario.nombreUsuario = self.tfNombre.text;
-    nuevoUsuario.matriculaUsuario = self.tfMatricula.text;
-    NSString *fecha = [[NSString alloc] initWithFormat:@"%@-%@-%@", self.tfDia.text, self.tfMes.text, self.tfYear.text];
-    //NSLog(@"%@", fecha);
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-mm-yyyy"];
+//    if ([self.tfNombre.text isEqualToString:@""] || [self.tfMatricula.text isEqualToString:@""] || [self.tfPassword.text isEqualToString:@""] || [self.tfPeso.text isEqualToString:@""] || [self.tfYear.text isEqualToString:@""] || [self.tfMes.text isEqualToString:@""] || [self.tfDia.text isEqualToString:@""] || [self.tfEstatura.text isEqualToString:@""]) {
+//        
+//        NSString *mensaje = [[NSString alloc] initWithFormat:@"Llena todos los campos."];
+//        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+//        [alerta show];
+//        
+//    } else {
+        nuevoUsuario.nombreUsuario = self.tfNombre.text;
+        nuevoUsuario.matriculaUsuario = self.tfMatricula.text;
+        NSString *fecha = [[NSString alloc] initWithFormat:@"%@-%@-%@", self.tfDia.text, self.tfMes.text, self.tfYear.text];
+        //NSLog(@"%@", fecha);
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd-mm-yyyy"];
+        
+        nuevoUsuario.fechaNacimientoUsuario = [dateFormatter dateFromString:fecha];
+        float estatura = [self.tfEstatura.text floatValue];
+        NSNumber *estatura2 = [[NSNumber alloc] initWithFloat:estatura];
+        nuevoUsuario.estaturaUsuario = estatura2;
+        float peso = [self.tfPeso.text floatValue];
+        NSNumber *peso2 = [[NSNumber alloc] initWithFloat:peso];
+        nuevoUsuario.pesoUsuario = peso2;
+        nuevoUsuario.passwordUsuario = self.tfPassword.text;
     
-    nuevoUsuario.fechaNacimientoUsuario = [dateFormatter dateFromString:fecha];
-    float estatura = [self.tfEstatura.text floatValue];
-    NSNumber *estatura2 = [[NSNumber alloc] initWithFloat:estatura];
-    nuevoUsuario.estaturaUsuario = estatura2;
-    float peso = [self.tfPeso.text floatValue];
-    NSNumber *peso2 = [[NSNumber alloc] initWithFloat:peso];
-    nuevoUsuario.pesoUsuario = peso2;
-    nuevoUsuario.passwordUsuario = self.tfPassword.text;
+//    }
     
-    // quitar pantalla y pasar a la tabbed view
+    
 }
 
 - (IBAction)agregarImagen:(UIButton *)sender {

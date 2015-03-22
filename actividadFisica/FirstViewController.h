@@ -10,6 +10,10 @@
 
 @interface FirstViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *tfVerAbdominales;
+@property (weak, nonatomic) IBOutlet UITextField *tfVerLagartijas;
+@property (weak, nonatomic) IBOutlet UITextField *tfVerMilla;
+@property (weak, nonatomic) IBOutlet UITextField *tfVerFlexibilidad;
 
 @end
 
