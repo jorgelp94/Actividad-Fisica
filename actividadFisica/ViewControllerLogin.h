@@ -10,4 +10,6 @@
 
 @interface ViewControllerLogin : UIViewController
 
+- (void) quitaTeclado;
+
 @end

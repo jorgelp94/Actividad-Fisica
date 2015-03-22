@@ -20,4 +20,6 @@
 @property (strong, nonatomic) NSString *milla;
 @property (strong, nonatomic) NSString *flex;
 
+- (void) quitaTeclado;
+
 @end

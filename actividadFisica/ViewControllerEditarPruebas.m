@@ -15,9 +15,16 @@
 
 @implementation ViewControllerEditarPruebas
 
+- (void) quitaTeclado {
+    [self.view endEditing:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quitaTeclado)];
+    [self.view addGestureRecognizer:tap];
+    
     self.tfEditaAbdominales.text = self.abs;
     self.tfEditaLagartijas.text = self.lagar;
     self.tfEditaMilla.text = self.milla;

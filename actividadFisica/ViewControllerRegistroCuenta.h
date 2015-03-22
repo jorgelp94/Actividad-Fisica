@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfYear;
 @property (weak, nonatomic) IBOutlet UITextField *tfPassword;
 
+@property (weak, nonatomic) IBOutlet UIButton *botonCrear;
 
 - (IBAction)preionoCancelar:(UIButton *)sender;
 - (IBAction)presionoCrear:(UIButton *)sender;

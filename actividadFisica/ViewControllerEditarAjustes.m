@@ -15,9 +15,16 @@
 
 @implementation ViewControllerEditarAjustes
 
+- (void) quitaTeclado {
+    [self.view endEditing:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quitaTeclado)];
+    [self.view addGestureRecognizer:tap];
+    
     self.imagenEditarAjustes.image = self.imagenEd;
     self.tfEditarPeso.text = self.pesoEd;
 }
@@ -62,4 +69,5 @@
 - (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
 @end

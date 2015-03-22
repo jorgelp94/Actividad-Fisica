@@ -54,8 +54,9 @@ Usuario *nuevoUsuario;
 }
 
 - (IBAction)presionoCrear:(UIButton *)sender {
+    
 //    if ([self.tfNombre.text isEqualToString:@""] || [self.tfMatricula.text isEqualToString:@""] || [self.tfPassword.text isEqualToString:@""] || [self.tfPeso.text isEqualToString:@""] || [self.tfYear.text isEqualToString:@""] || [self.tfMes.text isEqualToString:@""] || [self.tfDia.text isEqualToString:@""] || [self.tfEstatura.text isEqualToString:@""]) {
-//        
+//
 //        NSString *mensaje = [[NSString alloc] initWithFormat:@"Llena todos los campos."];
 //        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
 //        [alerta show];
@@ -76,7 +77,7 @@ Usuario *nuevoUsuario;
         NSNumber *peso2 = [[NSNumber alloc] initWithFloat:peso];
         nuevoUsuario.pesoUsuario = peso2;
         nuevoUsuario.passwordUsuario = self.tfPassword.text;
-    
+
 //    }
     
     

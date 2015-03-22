@@ -19,4 +19,6 @@
 @property (strong, nonatomic) UIImage *imagenEd;
 @property (weak, nonatomic) IBOutlet UIButton *botonGuardar;
 
+- (void) quitaTeclado;
+
 @end
