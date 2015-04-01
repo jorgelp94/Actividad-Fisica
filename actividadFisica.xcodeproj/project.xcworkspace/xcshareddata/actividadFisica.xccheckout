@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D4B6BA5D-4FF8-4390-AAEC-1105D0998F42</string>
+	<key>IDESourceControlProjectName</key>
+	<string>actividadFisica</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>43D15CC67E46B8D5D8F2E045928E2711F04F43A4</key>
+		<string>https://github.com/jorgelp94/Actividad-Fisica.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>actividadFisica.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>43D15CC67E46B8D5D8F2E045928E2711F04F43A4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jorgelp94/Actividad-Fisica.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>43D15CC67E46B8D5D8F2E045928E2711F04F43A4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>43D15CC67E46B8D5D8F2E045928E2711F04F43A4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Actividad-Fisica</string>
+		</dict>
+	</array>
+</dict>
+</plist>

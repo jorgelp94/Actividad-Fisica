@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfPassword;
 
 @property (weak, nonatomic) IBOutlet UIButton *botonCrear;
+@property (strong, nonatomic) NSString *idUsuarioActual;
 
 - (IBAction)preionoCancelar:(UIButton *)sender;
 - (IBAction)presionoCrear:(UIButton *)sender;
