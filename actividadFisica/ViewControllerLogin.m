@@ -24,6 +24,7 @@
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quitaTeclado)];
     [self.view addGestureRecognizer:tap];
+    self.sendSegue = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,12 +60,31 @@
             NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario y/o contraseña son incorrectos."];
             UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alerta show];
+            
+            self.sendSegue = NO;
         }
         else {
             NSString *mensaje = [[NSString alloc] initWithFormat:@"Inicio de sesión exitoso."];
             UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Login" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alerta show];
+            self.sendSegue = YES;
         }
     }];
+    
+    //[self shouldPerformSegueWithIdentifier:@"success" sender:sender];
 }
+
+- (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    //[self presionoIniciarSesion:self.botonIniciar];
+    if ([identifier  isEqual: @"cuenta"]) {
+        return YES;
+    }
+    if (self.sendSegue == YES) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
+}
+
 @end
