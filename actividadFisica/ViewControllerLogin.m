@@ -46,21 +46,23 @@
 }
 
 - (IBAction)presionoIniciarSesion:(UIButton *)sender {
+    
+    NSString *mat = [[NSString alloc] initWithFormat:@"%@", self.loginMatricula.text];
+    NSString *pas = [[NSString alloc] initWithFormat:@"%@", self.loginPassword.text];
     PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
-    [query whereKey:@"matricula" equalTo:self.loginMatricula.text];
-    [query whereKey:@"password" equalTo:self.loginPassword.text];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            NSString *mensaje = [[NSString alloc] initWithFormat:@"Inicio de sesión exitoso."];
-            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Login" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            [alerta show];
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-            }
-        }
-        else {
+    [query whereKey:@"matricula" equalTo:mat];
+    [query whereKey:@"password" equalTo:pas];
+    
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        NSLog(@"%@", object.objectId);
+        if (!object) {
             NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario y/o contraseña son incorrectos."];
             UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alerta show];
+        }
+        else {
+            NSString *mensaje = [[NSString alloc] initWithFormat:@"Inicio de sesión exitoso."];
+            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Login" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alerta show];
         }
     }];
