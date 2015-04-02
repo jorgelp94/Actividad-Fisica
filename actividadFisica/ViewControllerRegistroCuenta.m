@@ -52,6 +52,21 @@ Usuario *nuevoUsuario;
 }
 */
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"principal"]) {
+        if (self.validate == YES) {
+            return YES;
+        }
+        else {
+            return NO;
+        }
+    }
+    else {
+        return YES;
+    }
+    
+}
+
 
 - (IBAction)preionoCancelar:(UIButton *)sender {
     
@@ -60,64 +75,65 @@ Usuario *nuevoUsuario;
 
 - (IBAction)presionoCrear:(UIButton *)sender {
     
-    //    if ([self.tfNombre.text isEqualToString:@""] || [self.tfMatricula.text isEqualToString:@""] || [self.tfPassword.text isEqualToString:@""] || [self.tfPeso.text isEqualToString:@""] || [self.tfYear.text isEqualToString:@""] || [self.tfMes.text isEqualToString:@""] || [self.tfDia.text isEqualToString:@""] || [self.tfEstatura.text isEqualToString:@""]) {
-    //
-    //        NSString *mensaje = [[NSString alloc] initWithFormat:@"Llena todos los campos."];
-    //        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    //        [alerta show];
-    //
-    //    } else {
-    //        nuevoUsuario.nombreUsuario = self.tfNombre.text;
-    //        nuevoUsuario.matriculaUsuario = self.tfMatricula.text;
-    //        NSString *fecha = [[NSString alloc] initWithFormat:@"%@-%@-%@", self.tfDia.text, self.tfMes.text, self.tfYear.text];
-    //        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //        [dateFormatter setDateFormat:@"dd-mm-yyyy"];
+        if ([self.tfNombre.text isEqualToString:@""] || [self.tfMatricula.text isEqualToString:@""] || [self.tfPassword.text isEqualToString:@""] || [self.tfPeso.text isEqualToString:@""] || [self.tfYear.text isEqualToString:@""] || [self.tfMes.text isEqualToString:@""] || [self.tfDia.text isEqualToString:@""] || [self.tfEstatura.text isEqualToString:@""]) {
     
-    //        nuevoUsuario.fechaNacimientoUsuario = [dateFormatter dateFromString:fecha];
-    //        float estatura = [self.tfEstatura.text floatValue];
-    //        NSNumber *estatura2 = [[NSNumber alloc] initWithFloat:estatura];
-    //        nuevoUsuario.estaturaUsuario = estatura2;
-    //        float peso = [self.tfPeso.text floatValue];
-    //        NSNumber *peso2 = [[NSNumber alloc] initWithFloat:peso];
-    //        nuevoUsuario.pesoUsuario = peso2;
-    //        nuevoUsuario.passwordUsuario = self.tfPassword.text;
-    
-    //    }
-    
-    PFObject *usuario = [PFObject objectWithClassName:@"Usuario"];
-    
-    usuario[@"nombre"] = self.tfNombre.text;
-    usuario[@"matricula"] = self.tfMatricula.text;
-    usuario[@"password"] = self.tfPassword.text;
-    
-    NSString *fecha = [[NSString alloc] initWithFormat:@"%@-%@-%@", self.tfDia.text, self.tfMes.text, self.tfYear.text];
-    NSLog(@"%@", fecha);
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-mm-yyyy"];
-    NSLog(@"%@", [dateFormatter dateFromString:fecha]);
-    
-    usuario[@"fecha"] = fecha; // Puede guardarse como tipo fecha
-    usuario[@"peso"] = self.tfPeso.text;
-    usuario[@"estatura"] = self.tfEstatura.text;
-    
-    [usuario save];
-    
-    self.idUsuarioActual = usuario.objectId; // Id del objeto creado que se necesita enviar al siguiente view para obtener la información
-    
-    [usuario saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario se registró correctamente."];
-            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Registro" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            [alerta show];
-        }
-        else {
-            NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario no se registró correctamente."];
+            NSString *mensaje = [[NSString alloc] initWithFormat:@"Llena todos los campos."];
             UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alerta show];
+            self.validate = NO;
+    
+        } else {
+            PFObject *usuario = [PFObject objectWithClassName:@"Usuario"];
+            
+            // Validar matricula uq no exista una igual en la base de datos
+            PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
+            [query whereKey:@"matricula" equalTo:self.tfMatricula.text];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                if (!error) {
+                    NSLog(@"%lu registries", objects.count);
+                    if (objects.count == 0) {
+                        usuario[@"matricula"] = self.tfMatricula.text;
+                        usuario[@"nombre"] = self.tfNombre.text;
+                        usuario[@"password"] = self.tfPassword.text;
+                        
+                        NSString *fecha = [[NSString alloc] initWithFormat:@"%@-%@-%@", self.tfDia.text, self.tfMes.text, self.tfYear.text];
+                        NSLog(@"%@", fecha);
+                        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                        [dateFormatter setDateFormat:@"dd-mm-yyyy"];
+                        NSLog(@"%@", [dateFormatter dateFromString:fecha]);
+                        
+                        usuario[@"fecha"] = fecha; // Puede guardarse como tipo fecha
+                        usuario[@"peso"] = self.tfPeso.text;
+                        usuario[@"estatura"] = self.tfEstatura.text;
+                        
+                        [usuario save];
+                        
+                        self.idUsuarioActual = usuario.objectId; // Id del objeto creado que se necesita enviar al siguiente view para obtener la información
+                        
+                        [usuario saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                            if (succeeded) {
+                                NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario se registró correctamente."];
+                                UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Registro" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                [alerta show];
+                            }
+                            else {
+                                NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario no se registró correctamente."];
+                                UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                [alerta show];
+                            }
+                        }];
+                        
+                        self.validate = YES;
+                    }
+                    else {
+                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Ya está registrada esa contraseña. Por favor regresa e inicia sesión."];
+                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                        [alerta show];
+                        self.validate = NO;
+                    }
+                }
+            }];
         }
-    }];
-    
-    
 }
 
 - (IBAction)agregarImagen:(UIButton *)sender {
@@ -130,11 +146,6 @@ Usuario *nuevoUsuario;
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     self.imagenPersona.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    //    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.imagenPersona.image];
-    //    imageView.layer.cornerRadius = self.imagenPersona.image.size.width / 2;
-    //    imageView.layer.masksToBounds = YES;
-    //    [self.view addSubview:imageView];
-    //    UIImageWriteToSavedPhotosAlbum(self.imagenPersona.image, nil, nil, nil);
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

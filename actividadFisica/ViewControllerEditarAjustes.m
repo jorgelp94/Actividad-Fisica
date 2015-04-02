@@ -58,11 +58,6 @@
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     self.imagenEditarAjustes.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    //    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.imagenPersona.image];
-    //    imageView.layer.cornerRadius = self.imagenPersona.image.size.width / 2;
-    //    imageView.layer.masksToBounds = YES;
-    //    [self.view addSubview:imageView];
-    UIImageWriteToSavedPhotosAlbum(self.imagenEditarAjustes.image, nil, nil, nil);
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
