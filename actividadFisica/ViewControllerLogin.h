@@ -11,5 +11,8 @@
 @interface ViewControllerLogin : UIViewController
 
 - (void) quitaTeclado;
+@property (weak, nonatomic) IBOutlet UITextField *loginMatricula;
+@property (weak, nonatomic) IBOutlet UITextField *loginPassword;
+- (IBAction)presionoIniciarSesion:(UIButton *)sender;
 
 @end

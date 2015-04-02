@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerLogin.h"
+#import <Parse/Parse.h>
 
 @interface ViewControllerLogin ()
 
@@ -44,4 +45,24 @@
     // no hace nada
 }
 
+- (IBAction)presionoIniciarSesion:(UIButton *)sender {
+    PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
+    [query whereKey:@"matricula" equalTo:self.loginMatricula.text];
+    [query whereKey:@"password" equalTo:self.loginPassword.text];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSString *mensaje = [[NSString alloc] initWithFormat:@"Inicio de sesión exitoso."];
+            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Login" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alerta show];
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+            }
+        }
+        else {
+            NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario y/o contraseña son incorrectos."];
+            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alerta show];
+        }
+    }];
+}
 @end

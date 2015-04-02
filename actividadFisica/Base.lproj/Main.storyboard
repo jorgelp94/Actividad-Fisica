@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vSf-bj-MAH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vSf-bj-MAH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -281,7 +281,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7p6-T0-DSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8x5-QU-6kk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-330.5" y="-610.5"/>
+            <point key="canvasLocation" x="-344.5" y="-796.5"/>
         </scene>
         <!--Ajustes-->
         <scene sceneID="wg7-f3-ORb">
@@ -478,6 +478,10 @@
                                 <state key="normal" title="Iniciar sesión">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="presionoIniciarSesion:" destination="vSf-bj-MAH" eventType="touchUpInside" id="T13-Jn-buR"/>
+                                    <segue destination="49e-Tb-3d3" kind="presentation" id="8NR-Zk-sfP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kp-PW-tHp">
                                 <rect key="frame" x="143" y="472" width="89" height="30"/>
@@ -495,10 +499,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="loginMatricula" destination="CBk-MW-9P9" id="TXa-31-tr7"/>
+                        <outlet property="loginPassword" destination="yCS-cY-VOj" id="r3p-UH-Ldb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bV-FN-tWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-848.5" y="-610.5"/>
+            <point key="canvasLocation" x="-846.5" y="-436.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -518,7 +526,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="219.5" y="-610.5"/>
+            <point key="canvasLocation" x="153.5" y="-430.5"/>
         </scene>
     </scenes>
     <resources>
@@ -526,4 +534,7 @@
         <image name="logoTec.jpg" width="590" height="295"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Z8X-a2-qFM"/>
+    </inferredMetricsTieBreakers>
 </document>
