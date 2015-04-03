@@ -73,7 +73,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pruebas" image="pruebas" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Pruebas" image="actividad1" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tfVerAbdominales" destination="ZhS-T1-l3K" id="Aoz-s4-XHU"/>
                         <outlet property="tfVerFlexibilidad" destination="F9g-FF-1uu" id="L8J-Iw-77x"/>
@@ -303,6 +303,26 @@
             </objects>
             <point key="canvasLocation" x="-344.5" y="-796.5"/>
         </scene>
+        <!--Gráficas-->
+        <scene sceneID="gQD-Jw-ysz">
+            <objects>
+                <viewController id="07Z-EI-CBZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xxV-e9-07N"/>
+                        <viewControllerLayoutGuide type="bottom" id="afc-KD-eC9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gjQ-jS-dC4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Gráficas" image="pruebas" id="RZc-PD-dPM"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vl5-Hk-t0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153.5" y="782.5"/>
+        </scene>
         <!--Ajustes-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -507,7 +527,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0qG-7Z-8VZ" kind="presentation" identifier="cuenta" id="F3t-1P-aLP"/>
+                                    <segue destination="0qG-7Z-8VZ" kind="presentation" identifier="cuenta" modalTransitionStyle="flipHorizontal" id="F3t-1P-aLP"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoTec.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uGt-yF-dZr">
@@ -540,15 +560,17 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="07Z-EI-CBZ" kind="relationship" relationship="viewControllers" id="fHE-ig-loT"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153.5" y="-430.5"/>
+            <point key="canvasLocation" x="153.5" y="-426.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="actividad1" width="20" height="35"/>
         <image name="ajustes" width="32" height="32"/>
         <image name="back" width="27" height="24"/>
         <image name="logoTec.jpg" width="590" height="295"/>

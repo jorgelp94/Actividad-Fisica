@@ -81,8 +81,11 @@ Usuario *nuevoUsuario;
             UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alerta show];
             self.validate = NO;
+            
     
-        } else {
+        }
+    
+        else {
             PFObject *usuario = [PFObject objectWithClassName:@"Usuario"];
             
             // Validar matricula uq no exista una igual en la base de datos
@@ -95,6 +98,168 @@ Usuario *nuevoUsuario;
                         usuario[@"matricula"] = self.tfMatricula.text;
                         usuario[@"nombre"] = self.tfNombre.text;
                         usuario[@"password"] = self.tfPassword.text;
+                        
+                        if ([self.tfYear.text integerValue] < 1915 || [self.tfYear.text integerValue] > 2005) {
+                            NSString *mensaje = [[NSString alloc] initWithFormat:@"Año no válido."];
+                            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                            [alerta show];
+                            self.validate = NO;
+                        }
+                        
+                        if ([self.tfMes.text integerValue] < 1 || [self.tfMes.text integerValue] > 12) {
+                            NSString *mensaje = [[NSString alloc] initWithFormat:@"Mes no válido."];
+                            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                            [alerta show];
+                            self.validate = NO;
+                        } else {
+                            switch ([self.tfMes.text integerValue]) {
+                                case 1:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 31) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    
+                                case 2:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 29) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    break;
+                                    
+                                case 3:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 31) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    break;
+                                    
+                                case 4:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 30) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    break;
+                                    
+                                case 5:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 31) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    break;
+                                    
+                                case 6:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 30) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    break;
+                                    
+                                case 7:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 31) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    break;
+                                    
+                                case 8:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 31) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    break;
+                                    
+                                case 9:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 30) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    break;
+                                    
+                                case 10:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 31) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    break;
+                                    
+                                case 11:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 30) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    break;
+                                    
+                                case 12:
+                                    if ([self.tfDia.text integerValue] < 1 || [self.tfDia.text integerValue] > 31) {
+                                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Día no válido."];
+                                        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alerta show];
+                                        self.validate = NO;
+                                    }
+                                    else {
+                                        self.validate = YES;
+                                    }
+                                    break;
+                                    
+                                default:
+                                    break;
+                            }
+                        }
                         
                         NSString *fecha = [[NSString alloc] initWithFormat:@"%@-%@-%@", self.tfDia.text, self.tfMes.text, self.tfYear.text];
                         NSLog(@"%@", fecha);
@@ -126,7 +291,7 @@ Usuario *nuevoUsuario;
                         self.validate = YES;
                     }
                     else {
-                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Ya está registrada esa contraseña. Por favor regresa e inicia sesión."];
+                        NSString *mensaje = [[NSString alloc] initWithFormat:@"Ya está registrada esa matrícula. Por favor regresa e inicia sesión."];
                         UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                         [alerta show];
                         self.validate = NO;
