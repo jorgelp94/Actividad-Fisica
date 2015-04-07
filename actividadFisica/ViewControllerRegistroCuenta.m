@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewControllerRegistroCuenta ()
 
@@ -74,6 +75,8 @@ Usuario *nuevoUsuario;
 }
 
 - (IBAction)presionoCrear:(UIButton *)sender {
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
         if ([self.tfNombre.text isEqualToString:@""] || [self.tfMatricula.text isEqualToString:@""] || [self.tfPassword.text isEqualToString:@""] || [self.tfPeso.text isEqualToString:@""] || [self.tfYear.text isEqualToString:@""] || [self.tfMes.text isEqualToString:@""] || [self.tfDia.text isEqualToString:@""] || [self.tfEstatura.text isEqualToString:@""]) {
     
@@ -287,6 +290,8 @@ Usuario *nuevoUsuario;
                                 [alerta show];
                             }
                         }];
+                        
+                        appDelegate.generalID = usuario.objectId;
                         
                         self.validate = YES;
                     }

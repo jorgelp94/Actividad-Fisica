@@ -9,6 +9,8 @@
 #import "SecondViewController.h"
 #import "ViewControllerRegistroCuenta.h"
 #import "ViewControllerEditarAjustes.h"
+#import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @interface SecondViewController ()
 
@@ -21,14 +23,23 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // Carga informacion de la plist
-    NSString *filePath = [self dataFilePath];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        NSArray *array = [[NSArray alloc] initWithContentsOfFile:filePath];
-        self.tfNombreAjustes.text = [array objectAtIndex:2];
-        self.tfMatriculaAjustes.text = [array objectAtIndex:0];
-        self.tfEstaturaAjustes.text = [array objectAtIndex:4];
-        self.tfPesoAjustes.text = [array objectAtIndex:5];
-    }
+//    NSString *filePath = [self dataFilePath];
+//    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+//        NSArray *array = [[NSArray alloc] initWithContentsOfFile:filePath];
+//        self.tfNombreAjustes.text = [array objectAtIndex:2];
+//        self.tfMatriculaAjustes.text = [array objectAtIndex:0];
+//        self.tfEstaturaAjustes.text = [array objectAtIndex:4];
+//        self.tfPesoAjustes.text = [array objectAtIndex:5];
+//    }
+    AppDelegate *appDelegateSecond = [[UIApplication sharedApplication] delegate];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
+    [query getObjectInBackgroundWithId:appDelegateSecond.generalID block:^(PFObject *object, NSError *error) {
+        self.tfNombreAjustes.text = object[@"nombre"];
+        self.tfMatriculaAjustes.text = object[@"matricula"];
+        self.tfEstaturaAjustes.text = object[@"estatura"];
+        self.tfPesoAjustes.text = object[@"peso"];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

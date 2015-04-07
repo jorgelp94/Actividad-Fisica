@@ -316,7 +316,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gráficas" image="pruebas" id="RZc-PD-dPM"/>
+                    <tabBarItem key="tabBarItem" title="Gráficas" image="graph_bar.png" id="RZc-PD-dPM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vl5-Hk-t0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -545,7 +545,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bV-FN-tWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-846.5" y="-436.5"/>
+            <point key="canvasLocation" x="-850.5" y="-426.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -573,12 +573,12 @@
         <image name="actividad1" width="20" height="35"/>
         <image name="ajustes" width="32" height="32"/>
         <image name="back" width="27" height="24"/>
+        <image name="graph_bar.png" width="26" height="26"/>
         <image name="logoTec.jpg" width="590" height="295"/>
         <image name="next" width="81" height="72"/>
-        <image name="pruebas" width="30" height="30"/>
         <image name="selectPhoto.png" width="480" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z8X-a2-qFM"/>
+        <segue reference="8NR-Zk-sfP"/>
     </inferredMetricsTieBreakers>
 </document>

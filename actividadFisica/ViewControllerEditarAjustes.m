@@ -8,6 +8,8 @@
 
 #import "ViewControllerEditarAjustes.h"
 #import "SecondViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface ViewControllerEditarAjustes ()
 
@@ -44,6 +46,20 @@
         
         secondView.pesoAj = self.tfEditarPeso.text;
         secondView.imagenAj = self.imagenEditarAjustes.image;
+        
+        AppDelegate *appDelegateEditar = [[UIApplication sharedApplication] delegate];
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
+        [query whereKey:@"objectId" equalTo:appDelegateEditar.generalID];
+        [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            if (!error) {
+                [object setObject:self.tfEditarPeso.text forKey:@"peso"];
+                [object saveInBackground];
+            }
+            else {
+                NSLog(@"Error: %@", error);
+            }
+        }];
     }
 }
 

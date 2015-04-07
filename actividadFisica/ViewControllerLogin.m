@@ -8,6 +8,7 @@
 
 #import "ViewControllerLogin.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface ViewControllerLogin ()
 
@@ -48,6 +49,8 @@
 
 - (IBAction)presionoIniciarSesion:(UIButton *)sender {
     
+    AppDelegate *appDelegateLogin = [[UIApplication sharedApplication] delegate];
+    
     NSString *mat = [[NSString alloc] initWithFormat:@"%@", self.loginMatricula.text];
     NSString *pas = [[NSString alloc] initWithFormat:@"%@", self.loginPassword.text];
     PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
@@ -55,6 +58,7 @@
     [query whereKey:@"password" equalTo:pas];
     
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        appDelegateLogin.generalID = object.objectId;
         NSLog(@"%@", object.objectId);
         if (!object) {
             NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario y/o contraseña son incorrectos."];

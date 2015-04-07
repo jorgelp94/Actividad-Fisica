@@ -34,6 +34,7 @@
 		F47BE2CE1ACBC1BA00B18679 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F47BE2CD1ACBC1BA00B18679 /* libz.dylib */; };
 		F47BE2D01ACBC1C100B18679 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F47BE2CF1ACBC1C100B18679 /* libsqlite3.dylib */; };
 		F4A317AB1ACE02AF00689AAE /* selectPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = F4A317AA1ACE02AF00689AAE /* selectPhoto.png */; };
+		F4D022D31AD36E8800BC0B95 /* graph_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D022D21AD36E8800BC0B95 /* graph_bar@2x.png */; };
 		F4DE182B1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DE182A1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		F47BE2CD1ACBC1BA00B18679 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F47BE2CF1ACBC1C100B18679 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F4A317AA1ACE02AF00689AAE /* selectPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectPhoto.png; sourceTree = "<group>"; };
+		F4D022D21AD36E8800BC0B95 /* graph_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph_bar@2x.png"; sourceTree = "<group>"; };
 		F4DE18291ABE4D9600D6DA85 /* ViewControllerEditarAjustes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEditarAjustes.h; sourceTree = "<group>"; };
 		F4DE182A1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEditarAjustes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 		F401F7D11ABDF5E400A8F025 /* actividadFisica */ = {
 			isa = PBXGroup;
 			children = (
+				F4D022D21AD36E8800BC0B95 /* graph_bar@2x.png */,
 				F4A317AA1ACE02AF00689AAE /* selectPhoto.png */,
 				F401F7D61ABDF5E400A8F025 /* AppDelegate.h */,
 				F401F7D71ABDF5E400A8F025 /* AppDelegate.m */,
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F401F7E11ABDF5E500A8F025 /* Main.storyboard in Resources */,
+				F4D022D31AD36E8800BC0B95 /* graph_bar@2x.png in Resources */,
 				F401F7E61ABDF5E500A8F025 /* LaunchScreen.xib in Resources */,
 				F401F7E31ABDF5E500A8F025 /* Images.xcassets in Resources */,
 				F401F8051ABE16D200A8F025 /* logoTec.jpg in Resources */,
