@@ -511,9 +511,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1K-T2-d9a">
-                                <rect key="frame" x="142" y="408" width="90" height="30"/>
-                                <state key="normal" title="Iniciar sesión">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1K-T2-d9a">
+                                <rect key="frame" x="121" y="416" width="133" height="41"/>
+                                <state key="normal" image="login.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -521,18 +521,18 @@
                                     <segue destination="49e-Tb-3d3" kind="presentation" identifier="success" id="8NR-Zk-sfP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kp-PW-tHp">
-                                <rect key="frame" x="143" y="472" width="89" height="30"/>
-                                <state key="normal" title="Crear cuenta">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoTec.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uGt-yF-dZr">
+                                <rect key="frame" x="32" y="73" width="311" height="157"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kp-PW-tHp">
+                                <rect key="frame" x="121" y="483" width="133" height="42"/>
+                                <state key="normal" image="creaCuenta.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="0qG-7Z-8VZ" kind="presentation" identifier="cuenta" modalTransitionStyle="flipHorizontal" id="F3t-1P-aLP"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoTec.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uGt-yF-dZr">
-                                <rect key="frame" x="32" y="73" width="311" height="157"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -573,12 +573,14 @@
         <image name="actividad1" width="20" height="35"/>
         <image name="ajustes" width="32" height="32"/>
         <image name="back" width="27" height="24"/>
+        <image name="creaCuenta.png" width="257" height="80"/>
         <image name="graph_bar.png" width="26" height="26"/>
+        <image name="login.png" width="257" height="80"/>
         <image name="logoTec.jpg" width="590" height="295"/>
         <image name="next" width="81" height="72"/>
         <image name="selectPhoto.png" width="480" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8NR-Zk-sfP"/>
+        <segue reference="Z8X-a2-qFM"/>
     </inferredMetricsTieBreakers>
 </document>
