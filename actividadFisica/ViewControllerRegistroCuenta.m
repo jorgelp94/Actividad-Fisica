@@ -36,6 +36,11 @@ Usuario *nuevoUsuario;
     UIApplication *app = [UIApplication sharedApplication];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(aplicacionTerminara:) name:UIApplicationDidEnterBackgroundNotification object:app];
     self.idUsuarioActual = @"";
+    
+    // Scroll
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWasShown:)
+//                                                 name:UIKeyboardDidShowNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -341,5 +346,18 @@ Usuario *nuevoUsuario;
     
     [listaDatos writeToFile:[self dataFilePath] atomically:YES];
 }
+
+// Called when the UIKeyboardDidShowNotification is sent.
+//- (void)keyboardWasShown:(NSNotification*)aNotification
+//{
+//    NSDictionary* info = [aNotification userInfo];
+//    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+//    [self.scrollView setContentOffset:CGPointMake(0, kbSize.height) animated:YES];
+//}
+////called when the text field is being edited
+//- (IBAction)textFieldDidBeginEditing:(UITextField *)sender {
+//    sender.delegate = self;
+//}
+
 
 @end
