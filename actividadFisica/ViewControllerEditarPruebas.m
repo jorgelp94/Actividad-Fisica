@@ -8,6 +8,7 @@
 
 #import "ViewControllerEditarPruebas.h"
 #import "FirstViewController.h"
+#import <Parse/Parse.h>
 
 @interface ViewControllerEditarPruebas ()
 
