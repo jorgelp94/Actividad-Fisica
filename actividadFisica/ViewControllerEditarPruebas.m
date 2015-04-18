@@ -9,6 +9,7 @@
 #import "ViewControllerEditarPruebas.h"
 #import "FirstViewController.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface ViewControllerEditarPruebas ()
 
@@ -30,6 +31,8 @@
     self.tfEditaLagartijas.text = self.lagar;
     self.tfEditaMilla.text = self.milla;
     self.tfEditaFlexibilidad.text = self.flex;
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +59,32 @@
         viewFirst.mill = self.tfEditaMilla.text;
         viewFirst.fl = self.tfEditaFlexibilidad.text;
     }
+    
+    AppDelegate *appDelegatePruebas = [[UIApplication sharedApplication] delegate];
+    
+    PFObject *pruebaUsuario = [PFObject objectWithClassName:@"Pruebas"];
+    pruebaUsuario[@"matricula"] = appDelegatePruebas.matriculaGeneral;
+    pruebaUsuario[@"abdominales"] = self.tfEditaAbdominales.text;
+    pruebaUsuario[@"lagartijas"] = self.tfEditaLagartijas.text;
+    pruebaUsuario[@"milla"] = self.tfEditaMilla.text;
+    pruebaUsuario[@"flexibilidad"] = self.tfEditaFlexibilidad.text;
+    
+    [pruebaUsuario save];
+    
+    [pruebaUsuario saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSString *mensaje = [[NSString alloc] initWithFormat:@"Las pruebas se guardaron correctamente."];
+            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Pruebas" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alerta show];
+        }
+        else {
+            NSString *mensaje = [[NSString alloc] initWithFormat:@"No se pudieron guardar las pruebas correctamente."];
+            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alerta show];
+        }
+
+    }];
+
 }
 
 @end

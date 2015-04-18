@@ -59,6 +59,8 @@
     
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         appDelegateLogin.generalID = object.objectId;
+        appDelegateLogin.matriculaGeneral = object[@"matricula"];
+        NSLog(@"%@",appDelegateLogin.matriculaGeneral);
         NSLog(@"%@", object.objectId);
         if (!object) {
             NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario y/o contraseña son incorrectos."];

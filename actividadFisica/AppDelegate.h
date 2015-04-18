@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *generalID;
+@property (strong, nonatomic) NSString *matriculaGeneral;
 
 @end
 

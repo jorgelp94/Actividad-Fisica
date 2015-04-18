@@ -8,6 +8,8 @@
 
 #import "FirstViewController.h"
 #import "ViewControllerEditarPruebas.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface FirstViewController ()
 
@@ -19,6 +21,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    AppDelegate *appDelegatePrueba = [[UIApplication sharedApplication] delegate];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Pruebas"];
+    [query whereKey:@"matricula" equalTo:appDelegatePrueba.matriculaGeneral];
+    
+    // método solo trae el primer objeto que encuentra en la tabla de Parse
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!object) {
+            
+        }
+        else {
+            self.tfVerAbdominales.text = object[@"abdominales"];
+            self.tfVerLagartijas.text = object[@"lagartijas"];
+            self.tfVerMilla.text = object[@"milla"];
+            self.tfVerFlexibilidad.text = object[@"flexibilidad"];
+        }
+    }];
     
 }
 
