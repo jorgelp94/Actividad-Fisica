@@ -201,11 +201,17 @@
                                         <rect key="frame" x="70" y="273" width="235" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="0qG-7Z-8VZ" id="UOV-uv-Ffk"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Matrícula:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M5c-kF-Zkj">
                                         <rect key="frame" x="70" y="311" width="235" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="0qG-7Z-8VZ" id="FLJ-Lo-BVl"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMu-iD-GYx">
                                         <rect key="frame" x="25" y="60" width="21" height="21"/>
@@ -240,21 +246,33 @@
                                         <rect key="frame" x="70" y="349" width="235" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="0qG-7Z-8VZ" id="1Gt-Fa-vOc"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fecha de nacimiento:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVk-9M-Rcl">
                                         <rect key="frame" x="70" y="387" width="235" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="0qG-7Z-8VZ" id="GgN-Fd-Sao"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estatura" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEB-Xb-wN9">
                                         <rect key="frame" x="70" y="425" width="79" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="0qG-7Z-8VZ" id="1tz-1I-bru"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Peso:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iff-na-8eN">
                                         <rect key="frame" x="186" y="425" width="89" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="0qG-7Z-8VZ" id="Uov-3D-D3f"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="m." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cX-QF-T2u">
                                         <rect key="frame" x="157" y="434" width="20" height="21"/>
@@ -274,6 +292,14 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Género:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRr-ZQ-Z9G">
+                                        <rect key="frame" x="70" y="463" width="235" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="0qG-7Z-8VZ" id="3Bp-Vx-SNR"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -286,6 +312,7 @@
                         <outlet property="scrollView" destination="fYb-wj-yMs" id="jke-Bg-nuy"/>
                         <outlet property="tfEstatura" destination="ZEB-Xb-wN9" id="kl2-gK-VCw"/>
                         <outlet property="tfFecha" destination="dVk-9M-Rcl" id="hlC-WM-Q6t"/>
+                        <outlet property="tfGenero" destination="dRr-ZQ-Z9G" id="JtY-PJ-5nA"/>
                         <outlet property="tfMatricula" destination="M5c-kF-Zkj" id="Efq-wf-FQg"/>
                         <outlet property="tfNombre" destination="8Ec-ME-2be" id="ks3-Cm-ODf"/>
                         <outlet property="tfPassword" destination="CoO-cQ-bpH" id="1Fy-vk-Slh"/>

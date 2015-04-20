@@ -31,6 +31,8 @@ Usuario *nuevoUsuario;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quitaTeclado)];
     [self.view addGestureRecognizer:tap];
     
+    [self registerForKeyboardNotifications];
+    
     // La aplicación guarda la información cuando se cierra
     // Esta información se va cargar posteriormente en la vista para modificacion de información
     UIApplication *app = [UIApplication sharedApplication];
@@ -213,6 +215,53 @@ Usuario *nuevoUsuario;
     fechaMostrar = [formatoFecha stringFromDate:fecha];
     
     self.tfFecha.text = fechaMostrar;
+}
+
+// Call this method somewhere in your view controller setup code.
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    CGRect bkgndRect = self.activeField.superview.frame;
+    bkgndRect.size.height += kbSize.height;
+    [self.activeField.superview setFrame:bkgndRect];
+    [self.scrollView setContentOffset:CGPointMake(0.0, self.activeField.frame.origin.y-kbSize.height) animated:YES];
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    CGRect bkgndRect = self.activeField.superview.frame;
+    bkgndRect.size.height -= kbSize.height;
+    [self.activeField.superview setFrame:bkgndRect];
+    [self.scrollView setContentOffset:CGPointMake(0.0, 0.0) animated:YES];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.activeField = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.activeField = nil;
 }
 
 

@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfFecha;
 
 @property (weak, nonatomic) IBOutlet UITextField *tfPassword;
+@property (weak, nonatomic) IBOutlet UITextField *tfGenero;
 
 @property (weak, nonatomic) IBOutlet UIButton *botonCrear;
 @property (strong, nonatomic) NSString *idUsuarioActual;
@@ -33,5 +34,6 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (nonatomic, strong) UITextField *activeField;
 
 @end
