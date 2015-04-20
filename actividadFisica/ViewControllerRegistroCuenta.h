@@ -10,16 +10,15 @@
 #import "Usuario.h"
 
 @interface ViewControllerRegistroCuenta : UIViewController
-<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagenPersona;
 @property (weak, nonatomic) IBOutlet UITextField *tfNombre;
 @property (weak, nonatomic) IBOutlet UITextField *tfMatricula;
 @property (weak, nonatomic) IBOutlet UITextField *tfEstatura;
 @property (weak, nonatomic) IBOutlet UITextField *tfPeso;
-@property (weak, nonatomic) IBOutlet UITextField *tfDia;
-@property (weak, nonatomic) IBOutlet UITextField *tfMes;
-@property (weak, nonatomic) IBOutlet UITextField *tfYear;
+@property (weak, nonatomic) IBOutlet UITextField *tfFecha;
+
 @property (weak, nonatomic) IBOutlet UITextField *tfPassword;
 
 @property (weak, nonatomic) IBOutlet UIButton *botonCrear;
