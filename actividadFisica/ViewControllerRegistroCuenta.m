@@ -16,8 +16,11 @@
 @interface ViewControllerRegistroCuenta ()
 @property NSArray *genero;
 @property NSMutableArray *peso;
+@property NSMutableArray *estaturaDecimal;
+@property NSArray *estaturaEntero;
 @property (strong, nonatomic) UIPickerView *genderPicker;
 @property (strong, nonatomic) UIPickerView *weigthPicker;
+@property (strong, nonatomic) UIPickerView *estatura;
 
 @end
 
@@ -58,6 +61,12 @@ Usuario *nuevoUsuario;
         NSString *dato = [[NSString alloc] initWithFormat:@"%ld", (long)i];
         [self.peso addObject:dato];
     }
+    self.estaturaEntero = [[NSArray alloc] initWithObjects:@"0",@"1", nil];
+    self.estaturaDecimal = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i <= 99; i++) {
+        NSString *dato = [[NSString alloc] initWithFormat:@".%ld", (long)i];
+        [self.estaturaDecimal addObject:dato];
+    }
     
     //Picker género
     self.genderPicker = [[UIPickerView alloc] init];
@@ -72,6 +81,13 @@ Usuario *nuevoUsuario;
     self.weigthPicker.dataSource = self;
     [self.weigthPicker setShowsSelectionIndicator:YES];
     self.tfPeso.inputView = self.weigthPicker;
+    
+    //Picker estatura
+    self.estatura = [[UIPickerView alloc] init];
+    self.estatura.delegate = self;
+    self.estatura.dataSource = self;
+    [self.estatura setShowsSelectionIndicator:YES];
+    self.tfEstatura.inputView = self.estatura;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -281,7 +297,16 @@ Usuario *nuevoUsuario;
 {
     if (pickerView == self.genderPicker) {
         return self.genero[row];
-    } else {
+    }
+    else if (pickerView == self.estatura){
+        if (component == 0) {
+            return self.estaturaEntero[row];
+        }
+        else {
+            return self.estaturaDecimal[row];
+        }
+    }
+    else {
         return self.peso[row];
     }
     
@@ -291,7 +316,11 @@ Usuario *nuevoUsuario;
 {
     if (pickerView == self.genderPicker) {
         return 1;
-    } else {
+    }
+    else if (pickerView == self.estatura) {
+        return 2;
+    }
+    else {
         return 1;
     }
     
@@ -301,7 +330,16 @@ Usuario *nuevoUsuario;
 {
     if (pickerView == self.genderPicker) {
         return self.genero.count;
-    } else {
+    }
+    else if (pickerView == self.estatura) {
+        if (component == 0) {
+            return self.estaturaEntero.count;
+        }
+        else {
+            return self.estaturaDecimal.count;
+        }
+    }
+    else {
         return self.peso.count;
     }
     
@@ -314,7 +352,14 @@ Usuario *nuevoUsuario;
         //NSInteger val2 = [pickerView selectedRowInComponent:1];
         NSString *value = [[NSString alloc] initWithFormat:@"%@", self.genero[val1]];
         self.tfGenero.text = value;
-    } else {
+    }
+    else if (pickerView == self.estatura) {
+        NSInteger val1 = [pickerView selectedRowInComponent:0];
+        NSInteger val2 = [pickerView selectedRowInComponent:1];
+        NSString *value = [[NSString alloc] initWithFormat:@"%@%@", self.estaturaEntero[val1], self.estaturaDecimal[val2]];
+        self.tfEstatura.text = value;
+    }
+    else {
         NSInteger val1 = [pickerView selectedRowInComponent:0];
         NSString *value = [[NSString alloc] initWithFormat:@"%@",self.peso[val1]];
         self.tfPeso.text = value;
