@@ -14,6 +14,10 @@
 #import "AppDelegate.h"
 
 @interface ViewControllerRegistroCuenta ()
+@property NSArray *genero;
+@property NSMutableArray *peso;
+@property (strong, nonatomic) UIPickerView *genderPicker;
+@property (strong, nonatomic) UIPickerView *weigthPicker;
 
 @end
 
@@ -39,16 +43,35 @@ Usuario *nuevoUsuario;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(aplicacionTerminara:) name:UIApplicationDidEnterBackgroundNotification object:app];
     self.idUsuarioActual = @"";
     
-    // Scroll
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWasShown:)
-//                                                 name:UIKeyboardDidShowNotification object:nil];
+
     //Muestra el datePicker en lugar del teclado
     UIDatePicker *datePicker = [[UIDatePicker alloc]init];
     datePicker.datePickerMode = UIDatePickerModeDate;
     [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
     [self.tfFecha setInputView:datePicker];
     [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
+    
+    // Inicialización de arreglos
+    self.genero = [[NSArray alloc] initWithObjects:@"Masculino",@"Femenino", nil];
+    self.peso = [[NSMutableArray alloc] init];
+    for (NSInteger i = 30; i <= 120; i++) {
+        NSString *dato = [[NSString alloc] initWithFormat:@"%ld", (long)i];
+        [self.peso addObject:dato];
+    }
+    
+    //Picker género
+    self.genderPicker = [[UIPickerView alloc] init];
+    self.genderPicker.delegate = self;
+    self.genderPicker.dataSource =  self;
+    [self.genderPicker setShowsSelectionIndicator:YES];
+    self.tfGenero.inputView = self.genderPicker;
+    
+    //Picker peso
+    self.weigthPicker = [[UIPickerView alloc] init];
+    self.weigthPicker.delegate = self;
+    self.weigthPicker.dataSource = self;
+    [self.weigthPicker setShowsSelectionIndicator:YES];
+    self.tfPeso.inputView = self.weigthPicker;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,7 +114,7 @@ Usuario *nuevoUsuario;
     
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
-        if ([self.tfNombre.text isEqualToString:@""] || [self.tfMatricula.text isEqualToString:@""] || [self.tfPassword.text isEqualToString:@""] || [self.tfPeso.text isEqualToString:@""]|| [self.tfFecha.text isEqualToString:@""] || [self.tfEstatura.text isEqualToString:@""]) {
+        if ([self.tfNombre.text isEqualToString:@""] || [self.tfMatricula.text isEqualToString:@""] || [self.tfPassword.text isEqualToString:@""] || [self.tfPeso.text isEqualToString:@""]|| [self.tfFecha.text isEqualToString:@""] || [self.tfEstatura.text isEqualToString:@""] || [self.tfGenero.text isEqualToString:@""]) {
     
             NSString *mensaje = [[NSString alloc] initWithFormat:@"Llena todos los campos."];
             UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -120,6 +143,7 @@ Usuario *nuevoUsuario;
                         usuario[@"fecha"] = self.tfFecha.text; // Puede guardarse como tipo fecha
                         usuario[@"peso"] = self.tfPeso.text;
                         usuario[@"estatura"] = self.tfEstatura.text;
+                        usuario[@"genero"] = self.tfGenero.text;
                         
                         [usuario save];
                         
@@ -189,17 +213,6 @@ Usuario *nuevoUsuario;
     [listaDatos writeToFile:[self dataFilePath] atomically:YES];
 }
 
-//// Called when the UIKeyboardDidShowNotification is sent.
-//- (void)keyboardWasShown:(NSNotification*)aNotification
-//{
-//    NSDictionary* info = [aNotification userInfo];
-//    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-//    [self.scrollView setContentOffset:CGPointMake(0, kbSize.height) animated:YES];
-//}
-////called when the text field is being edited
-//- (IBAction)textFieldDidBeginEditing:(UITextField *)sender {
-//    sender.delegate = self;
-//}
 
 -(void)updateTextField:(id)sender
 {
@@ -210,7 +223,7 @@ Usuario *nuevoUsuario;
     NSString *fechaMostrar = [[NSString alloc] init];
     NSDateFormatter *formatoFecha = [[NSDateFormatter alloc] init];
     
-    [formatoFecha setDateFormat:@"dd-MMM-YYYY"];
+    [formatoFecha setDateFormat:@"dd-MM-YYYY"];
     
     fechaMostrar = [formatoFecha stringFromDate:fecha];
     
@@ -262,6 +275,51 @@ Usuario *nuevoUsuario;
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     self.activeField = nil;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    if (pickerView == self.genderPicker) {
+        return self.genero[row];
+    } else {
+        return self.peso[row];
+    }
+    
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    if (pickerView == self.genderPicker) {
+        return 1;
+    } else {
+        return 1;
+    }
+    
+}
+
+- (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if (pickerView == self.genderPicker) {
+        return self.genero.count;
+    } else {
+        return self.peso.count;
+    }
+    
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if (pickerView == self.genderPicker) {
+        NSInteger val1 = [pickerView selectedRowInComponent:0];
+        //NSInteger val2 = [pickerView selectedRowInComponent:1];
+        NSString *value = [[NSString alloc] initWithFormat:@"%@", self.genero[val1]];
+        self.tfGenero.text = value;
+    } else {
+        NSInteger val1 = [pickerView selectedRowInComponent:0];
+        NSString *value = [[NSString alloc] initWithFormat:@"%@",self.peso[val1]];
+        self.tfPeso.text = value;
+    }
+    
 }
 
 

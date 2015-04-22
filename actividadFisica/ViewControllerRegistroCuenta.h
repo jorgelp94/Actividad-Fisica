@@ -10,7 +10,7 @@
 #import "Usuario.h"
 
 @interface ViewControllerRegistroCuenta : UIViewController
-<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
+<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagenPersona;
 @property (weak, nonatomic) IBOutlet UITextField *tfNombre;
