@@ -38,6 +38,7 @@
 		F4DE182B1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DE182A1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m */; };
 		F4E13DB71AD8FF31002E08CE /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E13DB61AD8FF31002E08CE /* login.png */; };
 		F4E13DB91AD8FFC7002E08CE /* creaCuenta.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E13DB81AD8FFC7002E08CE /* creaCuenta.png */; };
+		F4ECC5931AE7348100E7AED8 /* magnifying_glass.png in Resources */ = {isa = PBXBuildFile; fileRef = F4ECC5921AE7348100E7AED8 /* magnifying_glass.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		F4DE182A1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEditarAjustes.m; sourceTree = "<group>"; };
 		F4E13DB61AD8FF31002E08CE /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		F4E13DB81AD8FFC7002E08CE /* creaCuenta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creaCuenta.png; sourceTree = "<group>"; };
+		F4ECC5921AE7348100E7AED8 /* magnifying_glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifying_glass.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				F4D022D21AD36E8800BC0B95 /* graph_bar@2x.png */,
 				F4A317AA1ACE02AF00689AAE /* selectPhoto.png */,
+				F4ECC5921AE7348100E7AED8 /* magnifying_glass.png */,
 				F401F7D61ABDF5E400A8F025 /* AppDelegate.h */,
 				F401F7D71ABDF5E400A8F025 /* AppDelegate.m */,
 				F401F7D91ABDF5E400A8F025 /* FirstViewController.h */,
@@ -312,6 +315,7 @@
 				F401F8051ABE16D200A8F025 /* logoTec.jpg in Resources */,
 				F4A317AB1ACE02AF00689AAE /* selectPhoto.png in Resources */,
 				F4E13DB71AD8FF31002E08CE /* login.png in Resources */,
+				F4ECC5931AE7348100E7AED8 /* magnifying_glass.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
