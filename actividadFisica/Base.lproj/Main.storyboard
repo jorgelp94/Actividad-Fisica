@@ -587,10 +587,10 @@
             </objects>
             <point key="canvasLocation" x="-574.5" y="1237.5"/>
         </scene>
-        <!--Item-->
+        <!--Búsqueda-->
         <scene sceneID="3IA-pl-x03">
             <objects>
-                <viewController id="1eA-C4-aGY" sceneMemberID="viewController">
+                <viewController id="1eA-C4-aGY" customClass="BusquedaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Vv-Y7-Lxt"/>
                         <viewControllerLayoutGuide type="bottom" id="D1C-ZK-kZC"/>
@@ -665,10 +665,27 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkD-3e-xY9">
+                                <rect key="frame" x="163" y="175" width="49" height="30"/>
+                                <state key="normal" title="Buscar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="presionoBuscar:" destination="1eA-C4-aGY" eventType="touchUpInside" id="WHr-h0-Acb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="magnifying_glass.png" id="FAV-a6-OVb"/>
+                    <tabBarItem key="tabBarItem" title="Búsqueda" image="magnifying_glass.png" id="FAV-a6-OVb"/>
+                    <connections>
+                        <outlet property="buscaMatricula" destination="YSd-mS-SNU" id="cHW-pp-Jga"/>
+                        <outlet property="tfEdad" destination="2WF-sV-diC" id="g50-Xb-vIV"/>
+                        <outlet property="tfEstatura" destination="6vf-BP-00V" id="VQo-Ov-GPT"/>
+                        <outlet property="tfMatricula" destination="KjF-Qs-K58" id="r3X-QA-lYa"/>
+                        <outlet property="tfNombre" destination="pkC-sa-OST" id="9iY-yw-y7L"/>
+                        <outlet property="tfPeso" destination="7CF-07-RYo" id="Lnm-cK-TN2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGl-KM-MLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -729,6 +746,6 @@
         <image name="selectPhoto.png" width="480" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z8X-a2-qFM"/>
+        <segue reference="8NR-Zk-sfP"/>
     </inferredMetricsTieBreakers>
 </document>
