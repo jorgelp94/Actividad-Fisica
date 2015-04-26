@@ -57,15 +57,20 @@ Usuario *nuevoUsuario;
     // Inicialización de arreglos
     self.genero = [[NSArray alloc] initWithObjects:@"Masculino",@"Femenino", nil];
     self.peso = [[NSMutableArray alloc] init];
-    for (NSInteger i = 30; i <= 120; i++) {
+    for (NSInteger i = 30; i <= 150; i++) {
         NSString *dato = [[NSString alloc] initWithFormat:@"%ld", (long)i];
         [self.peso addObject:dato];
     }
     self.estaturaEntero = [[NSArray alloc] initWithObjects:@"0",@"1", nil];
     self.estaturaDecimal = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i <= 99; i++) {
-        NSString *dato = [[NSString alloc] initWithFormat:@".%ld", (long)i];
-        [self.estaturaDecimal addObject:dato];
+        if (i < 10) {
+            NSString *dato = [[NSString alloc] initWithFormat:@".0%ld", (long)i];
+            [self.estaturaDecimal addObject:dato];
+        }else {
+            NSString *dato = [[NSString alloc] initWithFormat:@".%ld", (long)i];
+            [self.estaturaDecimal addObject:dato];
+        } 
     }
     
     //Picker género
