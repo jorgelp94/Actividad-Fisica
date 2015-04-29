@@ -37,7 +37,8 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     //MasterViewController *viewIni = [segue destinationViewController];
     MasterViewController *view = [segue destinationViewController];
-    NSArray *arreglo = [[NSArray alloc]initWithObjects:self.tfLag.text,self.tfAbd.text, self.tfMilla.text, self.tfElast.text, nil];
+    NSDate *fechaHoy = [[NSDate alloc] init];
+    NSArray *arreglo = [[NSArray alloc]initWithObjects:self.tfLag.text,self.tfAbd.text, self.tfMilla.text, self.tfElast.text, fechaHoy,nil];
     view.arregloRegistro = arreglo;
 }
 

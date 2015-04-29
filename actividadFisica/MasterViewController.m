@@ -100,12 +100,12 @@
     
     
     NSArray *object = self.listaPruebas[indexPath.row];
-    //NSDateFormatter *formatoFecha = [[NSDateFormatter alloc ]init];
-    //[formatoFecha setDateStyle: NSDateFormatterMediumStyle];
-    //NSString *stringFormateado = [formatoFecha stringFromDate:[object fecha]];
+    NSDateFormatter *formatoFecha = [[NSDateFormatter alloc ]init];
+    [formatoFecha setDateStyle: NSDateFormatterMediumStyle];
+    NSString *stringFormateado = [formatoFecha stringFromDate:[object objectAtIndex:4]];
     
-    //cell.textLabel.text = stringFormateado;
-    cell.textLabel.text = [object objectAtIndex:0];
+    cell.textLabel.text = stringFormateado;
+    //cell.textLabel.text = [object objectAtIndex:0];
     return cell;
 }
 
