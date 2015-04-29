@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BED131A1AF16B4500779642 /* ViewControllerAgregar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED13191AF16B4500779642 /* ViewControllerAgregar.m */; };
+		2BED13231AF1741A00779642 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED13221AF1741900779642 /* MasterViewController.m */; };
+		2BED13261AF177A300779642 /* DetailPruebasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED13251AF177A300779642 /* DetailPruebasViewController.m */; };
 		F401F7D51ABDF5E400A8F025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7D41ABDF5E400A8F025 /* main.m */; };
 		F401F7D81ABDF5E400A8F025 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7D71ABDF5E400A8F025 /* AppDelegate.m */; };
 		F401F7DB1ABDF5E400A8F025 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7DA1ABDF5E400A8F025 /* FirstViewController.m */; };
@@ -53,6 +56,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BED13181AF16B4500779642 /* ViewControllerAgregar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerAgregar.h; sourceTree = "<group>"; };
+		2BED13191AF16B4500779642 /* ViewControllerAgregar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAgregar.m; sourceTree = "<group>"; };
+		2BED13211AF1741900779642 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		2BED13221AF1741900779642 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		2BED13241AF177A300779642 /* DetailPruebasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPruebasViewController.h; sourceTree = "<group>"; };
+		2BED13251AF177A300779642 /* DetailPruebasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPruebasViewController.m; sourceTree = "<group>"; };
 		F401F7CF1ABDF5E400A8F025 /* actividadFisica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actividadFisica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F401F7D31ABDF5E400A8F025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F401F7D41ABDF5E400A8F025 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -154,6 +163,12 @@
 		F401F7D11ABDF5E400A8F025 /* actividadFisica */ = {
 			isa = PBXGroup;
 			children = (
+				2BED13241AF177A300779642 /* DetailPruebasViewController.h */,
+				2BED13251AF177A300779642 /* DetailPruebasViewController.m */,
+				2BED13211AF1741900779642 /* MasterViewController.h */,
+				2BED13221AF1741900779642 /* MasterViewController.m */,
+				2BED13181AF16B4500779642 /* ViewControllerAgregar.h */,
+				2BED13191AF16B4500779642 /* ViewControllerAgregar.m */,
 				F4D022D21AD36E8800BC0B95 /* graph_bar@2x.png */,
 				F4A317AA1ACE02AF00689AAE /* selectPhoto.png */,
 				F4ECC5921AE7348100E7AED8 /* magnifying_glass.png */,
@@ -338,15 +353,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BED13261AF177A300779642 /* DetailPruebasViewController.m in Sources */,
 				F4A0D66B1AE8856A008870B7 /* BusquedaViewController.m in Sources */,
 				F401F8031ABE13E600A8F025 /* ViewControllerLogin.m in Sources */,
 				F401F7DE1ABDF5E500A8F025 /* SecondViewController.m in Sources */,
 				F401F80C1ABE370300A8F025 /* ViewControllerEditarPruebas.m in Sources */,
+				2BED13231AF1741A00779642 /* MasterViewController.m in Sources */,
 				F401F7FD1ABDFACC00A8F025 /* ViewControllerRegistroCuenta.m in Sources */,
 				F401F7D81ABDF5E400A8F025 /* AppDelegate.m in Sources */,
 				F401F7DB1ABDF5E400A8F025 /* FirstViewController.m in Sources */,
 				F401F8001ABDFE7200A8F025 /* Usuario.m in Sources */,
 				F401F7D51ABDF5E400A8F025 /* main.m in Sources */,
+				2BED131A1AF16B4500779642 /* ViewControllerAgregar.m in Sources */,
 				F4DE182B1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
