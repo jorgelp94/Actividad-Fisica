@@ -10,6 +10,12 @@
 		2BED131A1AF16B4500779642 /* ViewControllerAgregar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED13191AF16B4500779642 /* ViewControllerAgregar.m */; };
 		2BED13231AF1741A00779642 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED13221AF1741900779642 /* MasterViewController.m */; };
 		2BED13261AF177A300779642 /* DetailPruebasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED13251AF177A300779642 /* DetailPruebasViewController.m */; };
+		2BED13341AF1804F00779642 /* BEMAverageLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED132B1AF1804F00779642 /* BEMAverageLine.m */; };
+		2BED13351AF1804F00779642 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED132D1AF1804F00779642 /* BEMCircle.m */; };
+		2BED13361AF1804F00779642 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED132F1AF1804F00779642 /* BEMLine.m */; };
+		2BED13371AF1804F00779642 /* BEMPermanentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED13311AF1804F00779642 /* BEMPermanentPopupView.m */; };
+		2BED13381AF1804F00779642 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED13331AF1804F00779642 /* BEMSimpleLineGraphView.m */; };
+		2BED133B1AF180BE00779642 /* ViewControllerGrafica.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED133A1AF180BE00779642 /* ViewControllerGrafica.m */; };
 		F401F7D51ABDF5E400A8F025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7D41ABDF5E400A8F025 /* main.m */; };
 		F401F7D81ABDF5E400A8F025 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7D71ABDF5E400A8F025 /* AppDelegate.m */; };
 		F401F7DB1ABDF5E400A8F025 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7DA1ABDF5E400A8F025 /* FirstViewController.m */; };
@@ -62,6 +68,18 @@
 		2BED13221AF1741900779642 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		2BED13241AF177A300779642 /* DetailPruebasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPruebasViewController.h; sourceTree = "<group>"; };
 		2BED13251AF177A300779642 /* DetailPruebasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPruebasViewController.m; sourceTree = "<group>"; };
+		2BED132A1AF1804F00779642 /* BEMAverageLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAverageLine.h; sourceTree = "<group>"; };
+		2BED132B1AF1804F00779642 /* BEMAverageLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMAverageLine.m; sourceTree = "<group>"; };
+		2BED132C1AF1804F00779642 /* BEMCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCircle.h; sourceTree = "<group>"; };
+		2BED132D1AF1804F00779642 /* BEMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCircle.m; sourceTree = "<group>"; };
+		2BED132E1AF1804F00779642 /* BEMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMLine.h; sourceTree = "<group>"; };
+		2BED132F1AF1804F00779642 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
+		2BED13301AF1804F00779642 /* BEMPermanentPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMPermanentPopupView.h; sourceTree = "<group>"; };
+		2BED13311AF1804F00779642 /* BEMPermanentPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPermanentPopupView.m; sourceTree = "<group>"; };
+		2BED13321AF1804F00779642 /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
+		2BED13331AF1804F00779642 /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
+		2BED13391AF180BE00779642 /* ViewControllerGrafica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerGrafica.h; sourceTree = "<group>"; };
+		2BED133A1AF180BE00779642 /* ViewControllerGrafica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerGrafica.m; sourceTree = "<group>"; };
 		F401F7CF1ABDF5E400A8F025 /* actividadFisica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actividadFisica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F401F7D31ABDF5E400A8F025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F401F7D41ABDF5E400A8F025 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -141,9 +159,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BED13291AF1804F00779642 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2BED132A1AF1804F00779642 /* BEMAverageLine.h */,
+				2BED132B1AF1804F00779642 /* BEMAverageLine.m */,
+				2BED132C1AF1804F00779642 /* BEMCircle.h */,
+				2BED132D1AF1804F00779642 /* BEMCircle.m */,
+				2BED132E1AF1804F00779642 /* BEMLine.h */,
+				2BED132F1AF1804F00779642 /* BEMLine.m */,
+				2BED13301AF1804F00779642 /* BEMPermanentPopupView.h */,
+				2BED13311AF1804F00779642 /* BEMPermanentPopupView.m */,
+				2BED13321AF1804F00779642 /* BEMSimpleLineGraphView.h */,
+				2BED13331AF1804F00779642 /* BEMSimpleLineGraphView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		F401F7C61ABDF5E300A8F025 = {
 			isa = PBXGroup;
 			children = (
+				2BED13291AF1804F00779642 /* Classes */,
 				F47BE2D11ACBC1CB00B18679 /* Frameworks */,
 				F401F7D11ABDF5E400A8F025 /* actividadFisica */,
 				F401F7EE1ABDF5E500A8F025 /* actividadFisicaTests */,
@@ -163,6 +199,8 @@
 		F401F7D11ABDF5E400A8F025 /* actividadFisica */ = {
 			isa = PBXGroup;
 			children = (
+				2BED13391AF180BE00779642 /* ViewControllerGrafica.h */,
+				2BED133A1AF180BE00779642 /* ViewControllerGrafica.m */,
 				2BED13241AF177A300779642 /* DetailPruebasViewController.h */,
 				2BED13251AF177A300779642 /* DetailPruebasViewController.m */,
 				2BED13211AF1741900779642 /* MasterViewController.h */,
@@ -353,14 +391,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BED13361AF1804F00779642 /* BEMLine.m in Sources */,
 				2BED13261AF177A300779642 /* DetailPruebasViewController.m in Sources */,
+				2BED13381AF1804F00779642 /* BEMSimpleLineGraphView.m in Sources */,
 				F4A0D66B1AE8856A008870B7 /* BusquedaViewController.m in Sources */,
+				2BED13371AF1804F00779642 /* BEMPermanentPopupView.m in Sources */,
 				F401F8031ABE13E600A8F025 /* ViewControllerLogin.m in Sources */,
 				F401F7DE1ABDF5E500A8F025 /* SecondViewController.m in Sources */,
 				F401F80C1ABE370300A8F025 /* ViewControllerEditarPruebas.m in Sources */,
+				2BED13351AF1804F00779642 /* BEMCircle.m in Sources */,
 				2BED13231AF1741A00779642 /* MasterViewController.m in Sources */,
 				F401F7FD1ABDFACC00A8F025 /* ViewControllerRegistroCuenta.m in Sources */,
+				2BED133B1AF180BE00779642 /* ViewControllerGrafica.m in Sources */,
 				F401F7D81ABDF5E400A8F025 /* AppDelegate.m in Sources */,
+				2BED13341AF1804F00779642 /* BEMAverageLine.m in Sources */,
 				F401F7DB1ABDF5E400A8F025 /* FirstViewController.m in Sources */,
 				F401F8001ABDFE7200A8F025 /* Usuario.m in Sources */,
 				F401F7D51ABDF5E400A8F025 /* main.m in Sources */,
