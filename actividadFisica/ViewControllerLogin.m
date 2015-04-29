@@ -25,7 +25,10 @@
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quitaTeclado)];
     [self.view addGestureRecognizer:tap];
-    self.sendSegue = NO;
+    
+    AppDelegate *appDelegateVar = [[UIApplication sharedApplication] delegate];
+    appDelegateVar.userArturo = @"L00888888";
+    appDelegateVar.passArturo = @"arturo";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,46 +54,38 @@
     
     AppDelegate *appDelegateLogin = [[UIApplication sharedApplication] delegate];
     
-    NSString *mat = [[NSString alloc] initWithFormat:@"%@", self.loginMatricula.text];
-    NSString *pas = [[NSString alloc] initWithFormat:@"%@", self.loginPassword.text];
-    PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
-    [query whereKey:@"matricula" equalTo:mat];
-    [query whereKey:@"password" equalTo:pas];
+    if ([self.loginMatricula.text isEqualToString:appDelegateLogin.userArturo] && [self.loginPassword.text isEqualToString:appDelegateLogin.passArturo]) {
+        [self performSegueWithIdentifier:@"administrador" sender:sender];
+    } else {
     
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        appDelegateLogin.generalID = object.objectId;
-        appDelegateLogin.matriculaGeneral = object[@"matricula"];
-        NSLog(@"%@",appDelegateLogin.matriculaGeneral);
-        NSLog(@"%@", object.objectId);
-        if (!object) {
-            NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario y/o contraseña son incorrectos."];
-            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            [alerta show];
-            
-            self.sendSegue = NO;
-        }
-        else {
-            NSString *mensaje = [[NSString alloc] initWithFormat:@"Inicio de sesión exitoso."];
-            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Login" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            [alerta show];
-            self.sendSegue = YES;
-        }
-    }];
+        NSString *mat = [[NSString alloc] initWithFormat:@"%@", self.loginMatricula.text];
+        NSString *pas = [[NSString alloc] initWithFormat:@"%@", self.loginPassword.text];
+        PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
+        [query whereKey:@"matricula" equalTo:mat];
+        [query whereKey:@"password" equalTo:pas];
     
-    //[self shouldPerformSegueWithIdentifier:@"success" sender:sender];
+        [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            appDelegateLogin.generalID = object.objectId;
+            appDelegateLogin.matriculaGeneral = object[@"matricula"];
+            NSLog(@"%@",appDelegateLogin.matriculaGeneral);
+            NSLog(@"%@", object.objectId);
+            if (!object) {
+                NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario y/o contraseña son incorrectos."];
+                UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alerta show];
+
+            }
+            else {
+                NSString *mensaje = [[NSString alloc] initWithFormat:@"Inicio de sesión exitoso."];
+                UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Login" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alerta show];
+                [self performSegueWithIdentifier:@"usuario" sender:sender];
+            }
+        }];
+    }
+    
 }
 
-- (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    //[self presionoIniciarSesion:self.botonIniciar];
-    if ([identifier  isEqual: @"cuenta"]) {
-        return YES;
-    }
-    if (self.sendSegue == YES) {
-        return YES;
-    }
-    else {
-        return NO;
-    }
-}
+
 
 @end

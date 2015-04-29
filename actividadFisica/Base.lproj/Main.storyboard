@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tWK-Id-tQf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vSf-bj-MAH">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Pruebas-->
@@ -230,7 +230,6 @@
                                         </state>
                                         <connections>
                                             <action selector="presionoCrear:" destination="0qG-7Z-8VZ" eventType="touchUpInside" id="HQc-hm-tfx"/>
-                                            <segue destination="49e-Tb-3d3" kind="presentation" identifier="principal" id="Z8X-a2-qFM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISd-pc-0ow">
@@ -317,6 +316,7 @@
                         <outlet property="tfNombre" destination="8Ec-ME-2be" id="ks3-Cm-ODf"/>
                         <outlet property="tfPassword" destination="CoO-cQ-bpH" id="1Fy-vk-Slh"/>
                         <outlet property="tfPeso" destination="Iff-na-8eN" id="R2u-B9-IuQ"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="registro" id="aXr-9f-PeD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7p6-T0-DSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -424,6 +424,12 @@
                                 <rect key="frame" x="131" y="76" width="113" height="113"/>
                                 <color key="tintColor" red="0.80782903439999998" green="0.80782903439999998" blue="0.80782903439999998" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzb-BK-WvB">
+                                <rect key="frame" x="291" y="28" width="53" height="30"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -539,7 +545,6 @@
                                 </state>
                                 <connections>
                                     <action selector="presionoIniciarSesion:" destination="vSf-bj-MAH" eventType="touchUpInside" id="T13-Jn-buR"/>
-                                    <segue destination="49e-Tb-3d3" kind="presentation" identifier="success" id="8NR-Zk-sfP"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoTec.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uGt-yF-dZr">
@@ -562,11 +567,13 @@
                         <outlet property="botonIniciar" destination="L1K-T2-d9a" id="XuE-O6-qR6"/>
                         <outlet property="loginMatricula" destination="CBk-MW-9P9" id="TXa-31-tr7"/>
                         <outlet property="loginPassword" destination="yCS-cY-VOj" id="r3p-UH-Ldb"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="usuario" id="YUx-O3-Udt"/>
+                        <segue destination="tWK-Id-tQf" kind="presentation" identifier="administrador" id="Z0k-oj-4WE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bV-FN-tWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-850.5" y="-426.5"/>
+            <point key="canvasLocation" x="-858.5" y="-426.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="4mu-KY-LKL">
@@ -709,7 +716,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEI-Io-JGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-850.5" y="385.5"/>
+            <point key="canvasLocation" x="-858.5" y="419.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -730,7 +737,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153.5" y="-426.5"/>
+            <point key="canvasLocation" x="145.5" y="-426.5"/>
         </scene>
     </scenes>
     <resources>
@@ -746,6 +753,6 @@
         <image name="selectPhoto.png" width="480" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z8X-a2-qFM"/>
+        <segue reference="aXr-9f-PeD"/>
     </inferredMetricsTieBreakers>
 </document>

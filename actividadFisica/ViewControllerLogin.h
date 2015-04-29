@@ -13,7 +13,6 @@
 - (void) quitaTeclado;
 @property (weak, nonatomic) IBOutlet UITextField *loginMatricula;
 @property (weak, nonatomic) IBOutlet UITextField *loginPassword;
-@property BOOL sendSegue;
 - (IBAction)presionoIniciarSesion:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *botonIniciar;
 

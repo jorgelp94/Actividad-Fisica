@@ -110,21 +110,6 @@ Usuario *nuevoUsuario;
 }
 */
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if ([identifier isEqualToString:@"principal"]) {
-        if (self.validate == YES) {
-            return YES;
-        }
-        else {
-            return NO;
-        }
-    }
-    else {
-        return YES;
-    }
-    
-}
-
 
 - (IBAction)preionoCancelar:(UIButton *)sender {
     
@@ -140,8 +125,6 @@ Usuario *nuevoUsuario;
             NSString *mensaje = [[NSString alloc] initWithFormat:@"Llena todos los campos."];
             UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alerta show];
-            self.validate = NO;
-            
     
         }
     
@@ -175,6 +158,7 @@ Usuario *nuevoUsuario;
                                 NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario se registró correctamente."];
                                 UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Registro" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                                 [alerta show];
+                                [self performSegueWithIdentifier:@"registro" sender:sender];
                             }
                             else {
                                 NSString *mensaje = [[NSString alloc] initWithFormat:@"El usuario no se registró correctamente."];
@@ -184,14 +168,11 @@ Usuario *nuevoUsuario;
                         }];
                         
                         appDelegate.generalID = usuario.objectId;
-                        
-                        self.validate = YES;
-                    }
+                                            }
                     else {
                         NSString *mensaje = [[NSString alloc] initWithFormat:@"Ya está registrada esa matrícula. Por favor regresa e inicia sesión."];
                         UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                         [alerta show];
-                        self.validate = NO;
                     }
                 }
             }];

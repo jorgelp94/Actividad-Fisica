@@ -13,6 +13,8 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *generalID;
 @property (strong, nonatomic) NSString *matriculaGeneral;
+@property (strong, nonatomic) NSString *userArturo;
+@property (strong, nonatomic) NSString *passArturo;
 
 @end
 

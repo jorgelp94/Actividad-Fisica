@@ -24,7 +24,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *botonCrear;
 @property (strong, nonatomic) NSString *idUsuarioActual;
-@property BOOL validate;
 
 - (IBAction)preionoCancelar:(UIButton *)sender;
 - (IBAction)presionoCrear:(UIButton *)sender;
