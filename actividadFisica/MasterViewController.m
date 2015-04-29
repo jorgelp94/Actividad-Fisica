@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.borrar = NO;   // no se quiere borrar un elemento de la lista
     
     // Init with objects recibe bjetos separados por coma y termina en nil o nulo
     //self.listaPruebas = [[NSMutableArray alloc]init];
@@ -48,6 +49,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+    DELETE ROW
+ */
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.listaPruebas removeObjectAtIndex:indexPath.row];
+    [self.listaPruebas writeToFile:[self dataFilePath] atomically: YES];
+    [self.tableView reloadData];
+}
 
 
 #pragma mark - Segues
