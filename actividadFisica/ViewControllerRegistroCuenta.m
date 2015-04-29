@@ -14,6 +14,7 @@
 #import "AppDelegate.h"
 
 @interface ViewControllerRegistroCuenta ()
+
 @property NSArray *genero;
 @property NSMutableArray *peso;
 @property NSMutableArray *estaturaDecimal;
