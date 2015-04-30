@@ -24,12 +24,23 @@
         self.listaPruebas = [[NSMutableArray alloc]init];
     }
     
-    self.myGraph.animationGraphEntranceTime = 1.5; // la animacion de la grafica dura 3 segundos
+    self.myGraph.animationGraphEntranceTime = 1; // la animacion de la grafica dura 3 segundos
     self.myGraph.enablePopUpReport = YES;
     self.myGraph.enableTouchReport = YES;
     self.myGraph.enableReferenceXAxisLines = YES;
     self.myGraph.enableReferenceYAxisLines = YES;
 
+    /*
+    
+    // Draw an average line
+    self.myGraph.averageLine.enableAverageLine = YES;
+    self.myGraph.averageLine.alpha = 0.6;
+    self.myGraph.averageLine.color = [UIColor darkGrayColor];
+    self.myGraph.averageLine.width = 2.5;
+    self.myGraph.averageLine.dashPattern = @[@(2),@(2)];
+    self.myGraph.averageLine.yValue = 4.5;
+     */
+     
 }
 
 - (void)didReceiveMemoryWarning {
