@@ -13,5 +13,11 @@
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *myGraph;
 @property (strong, nonatomic) NSArray *arrayOfValues;
 @property (weak, nonatomic) IBOutlet UILabel *lblDisplay;
+@property (weak, nonatomic) IBOutlet UILabel *lblFecha;
+
 @property NSMutableArray *listaPruebas;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)refresh:(UISegmentedControl *)sender;
+
 @end

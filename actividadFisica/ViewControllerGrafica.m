@@ -24,9 +24,11 @@
         self.listaPruebas = [[NSMutableArray alloc]init];
     }
     
-    self.myGraph.animationGraphEntranceTime = 3; // la animacion de la grafica dura 3 segundos
+    self.myGraph.animationGraphEntranceTime = 1.5; // la animacion de la grafica dura 3 segundos
     self.myGraph.enablePopUpReport = YES;
     self.myGraph.enableTouchReport = YES;
+    self.myGraph.enableReferenceXAxisLines = YES;
+    self.myGraph.enableReferenceYAxisLines = YES;
 
 }
 
@@ -52,7 +54,21 @@
 }
 
 - (CGFloat)lineGraph:(BEMSimpleLineGraphView *)graph valueForPointAtIndex:(NSInteger)index {
-    return [[[self.listaPruebas objectAtIndex:index] objectAtIndex:0]doubleValue]; // The value of the point on the Y-Axis for the index.
+    if (self.segmentedControl.selectedSegmentIndex == 0){
+        return [[[self.listaPruebas objectAtIndex:index] objectAtIndex:0]doubleValue];
+        
+    }
+    else if (self.segmentedControl.selectedSegmentIndex == 1){
+        return [[[self.listaPruebas objectAtIndex:index] objectAtIndex:1]doubleValue];
+
+    }
+    else if (self.segmentedControl.selectedSegmentIndex == 2){
+        return [[[self.listaPruebas objectAtIndex:index] objectAtIndex:2]doubleValue];
+        
+    }
+    else {
+        return [[[self.listaPruebas objectAtIndex:index] objectAtIndex:3]doubleValue];
+    }
 }
 
 
@@ -72,14 +88,36 @@
 }
 
 - (void)lineGraph:(BEMSimpleLineGraphView *)graph didTouchGraphWithClosestIndex:(NSInteger)index {
-    self.lblDisplay.text = [[self.listaPruebas objectAtIndex:index] objectAtIndex:0];
+    if (self.segmentedControl.selectedSegmentIndex == 0){
+        self.lblDisplay.text = [[self.listaPruebas objectAtIndex:index] objectAtIndex:0];
+
+    }
+    else if (self.segmentedControl.selectedSegmentIndex == 1){
+        self.lblDisplay.text = [[self.listaPruebas objectAtIndex:index] objectAtIndex:1];
+    }
+    else if (self.segmentedControl.selectedSegmentIndex == 2){
+        self.lblDisplay.text = [[self.listaPruebas objectAtIndex:index] objectAtIndex:2];
+        
+    }
+    else if (self.segmentedControl.selectedSegmentIndex == 3){
+        self.lblDisplay.text = [[self.listaPruebas objectAtIndex:index] objectAtIndex:3];
+    }
+    
+    NSDateFormatter *formatoFecha = [[NSDateFormatter alloc ]init];
+    [formatoFecha setDateStyle: NSDateFormatterMediumStyle];
+    NSString *stringFormateado = [formatoFecha stringFromDate:[[self.listaPruebas objectAtIndex:index] objectAtIndex:4]];
+    self.lblFecha.text = stringFormateado;
 }
 
 - (void)lineGraph:(BEMSimpleLineGraphView *)graph didReleaseTouchFromGraphWithClosestIndex:(CGFloat)index {
     self.lblDisplay.text = @"---";
+    self.lblFecha.text = @"--";
 }
 
 
 
 
+- (IBAction)refresh:(UISegmentedControl *)sender {
+    [self.myGraph reloadGraph];
+}
 @end
