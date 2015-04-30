@@ -836,11 +836,11 @@
             </objects>
             <point key="canvasLocation" x="145.5" y="-426.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Registro-->
         <scene sceneID="tDQ-eZ-emp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jwD-M3-qRV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="Smh-C2-PA3"/>
+                    <tabBarItem key="tabBarItem" title="Registro" image="pencil.png" selectedImage="pencil.png" id="Smh-C2-PA3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pTE-XZ-E45">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -865,6 +865,7 @@
         <image name="logoTec.jpg" width="590" height="295"/>
         <image name="magnifying_glass.png" width="26" height="26"/>
         <image name="next" width="81" height="72"/>
+        <image name="pencil.png" width="26" height="26"/>
         <image name="selectPhoto.png" width="480" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
