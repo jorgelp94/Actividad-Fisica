@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Registro";
+    
     self.borrar = NO;   // no se quiere borrar un elemento de la lista
     
     // Init with objects recibe bjetos separados por coma y termina en nil o nulo

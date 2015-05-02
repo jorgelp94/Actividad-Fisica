@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewControllerAgregar : UIViewController
+<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *tfLag;
 @property (weak, nonatomic) IBOutlet UITextField *tfAbd;
 @property (weak, nonatomic) IBOutlet UITextField *tfMilla;
