@@ -16,6 +16,8 @@
 @property (strong, nonatomic) NSString *userArturo;
 @property (strong, nonatomic) NSString *passArturo;
 @property (strong, nonatomic) NSString *busqueda;
+@property (strong, nonatomic) NSString *genero;
+@property (strong, nonatomic) NSString *edad;
 
 @end
 

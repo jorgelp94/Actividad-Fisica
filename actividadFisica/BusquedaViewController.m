@@ -56,6 +56,9 @@
                     self.tfMatricula.text = usuario[@"matricula"];
                     self.tfEstatura.text = usuario[@"estatura"];
                     self.tfPeso.text = usuario[@"peso"];
+                    
+                    appDelegate.genero = usuario[@"genero"];
+                    
                     NSString *fechaNacimiento = object[@"fecha"];
                     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                     [dateFormatter setDateFormat:@"dd-MM-yyyy"];
@@ -68,6 +71,7 @@
                     NSString *edad = [[NSString alloc] initWithFormat:@"%ld", (long)age];
                     
                     self.tfEdad.text = edad;
+                    appDelegate.edad = edad;
                 }];
                 
             }

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BEMSimpleLineGraphView.h"
 
+
 @interface ViewControllerGrafica : UIViewController <BEMSimpleLineGraphDataSource, BEMSimpleLineGraphDelegate>
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *myGraph;
 @property (strong, nonatomic) NSArray *arrayOfValues;

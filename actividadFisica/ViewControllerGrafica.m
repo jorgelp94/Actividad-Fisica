@@ -7,6 +7,8 @@
 //
 
 #import "ViewControllerGrafica.h"
+#import "SecondViewController.h"
+#import "AppDelegate.h"
 
 
 @implementation ViewControllerGrafica
@@ -30,16 +32,14 @@
     self.myGraph.enableReferenceXAxisLines = YES;
     self.myGraph.enableReferenceYAxisLines = YES;
 
-    /*
+    
     
     // Draw an average line
     self.myGraph.averageLine.enableAverageLine = YES;
     self.myGraph.averageLine.alpha = 0.6;
-    self.myGraph.averageLine.color = [UIColor darkGrayColor];
+    self.myGraph.averageLine.color = [UIColor yellowColor];
     self.myGraph.averageLine.width = 2.5;
     self.myGraph.averageLine.dashPattern = @[@(2),@(2)];
-    self.myGraph.averageLine.yValue = 4.5;
-     */
      
 }
 
@@ -65,19 +65,141 @@
 }
 
 - (CGFloat)lineGraph:(BEMSimpleLineGraphView *)graph valueForPointAtIndex:(NSInteger)index {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    //            self.myGraph.averageLine.yValue = 50.0;
+
+    /*
+     *  LAGARTIJAS
+     */
     if (self.segmentedControl.selectedSegmentIndex == 0){
+        //HOMBRE
+        if ([appDelegate.genero isEqualToString:@"Masculino"]){
+            if ([appDelegate.edad integerValue] < 35){ // <35
+                self.myGraph.averageLine.yValue = 30.0;
+            }
+            else if([appDelegate.edad integerValue] > 34 && [appDelegate.edad integerValue] < 45) { // 35-44
+                self.myGraph.averageLine.yValue = 25.0;
+            }
+            else{ //>45
+                self.myGraph.averageLine.yValue = 15.0;
+            }
+        }
+        //MUJER
+        else{
+            if ([appDelegate.edad integerValue] < 35){ // <35
+                self.myGraph.averageLine.yValue = 25.0;
+            }
+            else if([appDelegate.edad integerValue] > 34 && [appDelegate.edad integerValue] < 45) { // 35-44
+                self.myGraph.averageLine.yValue = 15.0;
+            }
+            else{ //>45
+                self.myGraph.averageLine.yValue = 10.0;
+            }
+        }
+        
         return [[[self.listaPruebas objectAtIndex:index] objectAtIndex:0]doubleValue];
         
     }
+    /*
+     *  ABDOMINALES
+     */
     else if (self.segmentedControl.selectedSegmentIndex == 1){
+        //HOMBRE
+        if ([appDelegate.genero isEqualToString:@"Masculino"]){
+            if ([appDelegate.edad integerValue] < 30){ // <=29
+                self.myGraph.averageLine.yValue = 39.5;
+            }
+            else if([appDelegate.edad integerValue] > 29 && [appDelegate.edad integerValue] < 40){ // 30-39
+                self.myGraph.averageLine.yValue = 29.0;
+            }
+            else if([appDelegate.edad integerValue] > 39 && [appDelegate.edad integerValue] < 50){ // 40-49
+                self.myGraph.averageLine.yValue = 24.5;
+            }
+            else if([appDelegate.edad integerValue] > 49 && [appDelegate.edad integerValue] < 60){ // 50-59
+                self.myGraph.averageLine.yValue = 19.5;
+            }
+            else{ //+60
+                self.myGraph.averageLine.yValue = 14.5;
+            }
+        }
+        //MUJER
+        else{
+            if ([appDelegate.edad integerValue] < 30){ // <=29
+                self.myGraph.averageLine.yValue = 25.0;
+            }
+            else if([appDelegate.edad integerValue] > 29 && [appDelegate.edad integerValue] < 40){ // 30-39
+                self.myGraph.averageLine.yValue = 18.0;
+            }
+            else if([appDelegate.edad integerValue] > 39 && [appDelegate.edad integerValue] < 50){ // 40-49
+                self.myGraph.averageLine.yValue = 13.5;
+            }
+            else if([appDelegate.edad integerValue] > 49 && [appDelegate.edad integerValue] < 60){ // 50-59
+                self.myGraph.averageLine.yValue = 10.0;
+            }
+            else{ //+60
+                self.myGraph.averageLine.yValue = 3.5;
+            }
+        }
+
+        
         return [[[self.listaPruebas objectAtIndex:index] objectAtIndex:1]doubleValue];
 
     }
+    /*
+     *  MILLAS
+     */
     else if (self.segmentedControl.selectedSegmentIndex == 2){
+        //HOMBRE
+        if ([appDelegate.genero isEqualToString:@"Masculino"]){
+            if ([appDelegate.edad integerValue] < 30){ // <=29
+                self.myGraph.averageLine.yValue = 13.20;
+            }
+            else if ([appDelegate.edad integerValue] > 29 && [appDelegate.edad integerValue] < 40){
+                self.myGraph.averageLine.yValue = 13.50;
+            }
+            else if ([appDelegate.edad integerValue] > 39 && [appDelegate.edad integerValue] < 50){
+                self.myGraph.averageLine.yValue = 14.20;
+            }
+            else if ([appDelegate.edad integerValue] > 49 && [appDelegate.edad integerValue] < 60){
+                self.myGraph.averageLine.yValue = 14.40;
+            }
+            else if ([appDelegate.edad integerValue] > 59 && [appDelegate.edad integerValue] < 70){
+                self.myGraph.averageLine.yValue = 15.40;
+            }
+            else{ // +70
+                self.myGraph.averageLine.yValue = 16.50;
+            }
+        }
+        //MUJER
+        else{
+            if ([appDelegate.edad integerValue] < 30){ // <=29
+                self.myGraph.averageLine.yValue = 14.30;
+            }
+            else if ([appDelegate.edad integerValue] > 29 && [appDelegate.edad integerValue] < 40){
+                self.myGraph.averageLine.yValue = 15.0;
+            }
+            else if ([appDelegate.edad integerValue] > 39 && [appDelegate.edad integerValue] < 50){
+                self.myGraph.averageLine.yValue = 15.30;
+            }
+            else if ([appDelegate.edad integerValue] > 49 && [appDelegate.edad integerValue] < 60){
+                self.myGraph.averageLine.yValue = 16.15;
+            }
+            else if ([appDelegate.edad integerValue] > 59 && [appDelegate.edad integerValue] < 70){
+                self.myGraph.averageLine.yValue = 17.0;
+            }
+            else{ // +70
+                self.myGraph.averageLine.yValue = 20.50;
+            }
+        }
         return [[[self.listaPruebas objectAtIndex:index] objectAtIndex:2]doubleValue];
         
     }
+    /*
+     *  ELASTICIDAD
+     */
     else {
+        self.myGraph.averageLine.yValue = 18;
+        
         return [[[self.listaPruebas objectAtIndex:index] objectAtIndex:3]doubleValue];
     }
 }

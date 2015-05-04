@@ -144,11 +144,26 @@ Usuario *nuevoUsuario;
                         usuario[@"nombre"] = self.tfNombre.text;
                         usuario[@"password"] = self.tfPassword.text;
                         
-                        
                         usuario[@"fecha"] = self.tfFecha.text; // Puede guardarse como tipo fecha
                         usuario[@"peso"] = self.tfPeso.text;
                         usuario[@"estatura"] = self.tfEstatura.text;
                         usuario[@"genero"] = self.tfGenero.text;
+                        appDelegate.genero =usuario[@"genero"];
+                        
+                        NSString *fechaNacimiento = usuario[@"fecha"];
+                        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                        [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+                        NSDate *nacimiento = [[NSDate alloc] init];
+                        nacimiento = [dateFormatter dateFromString:fechaNacimiento];
+                        
+                        NSDate *now = [NSDate date];
+                        NSDateComponents *ageComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:nacimiento toDate:now options:0];
+                        NSInteger age = [ageComponents year];
+                        NSString *edad = [[NSString alloc] initWithFormat:@"%ld", (long)age];
+                        
+                        appDelegate.edad = edad;
+
+                        
                         
                         [usuario save];
                         

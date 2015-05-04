@@ -67,6 +67,23 @@
         [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
             appDelegateLogin.generalID = object.objectId;
             appDelegateLogin.matriculaGeneral = object[@"matricula"];
+            appDelegateLogin.genero = object[@"genero"];
+            
+            NSString *fechaNacimiento = object[@"fecha"];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+            NSDate *nacimiento = [[NSDate alloc] init];
+            nacimiento = [dateFormatter dateFromString:fechaNacimiento];
+            
+            NSDate *now = [NSDate date];
+            NSDateComponents *ageComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:nacimiento toDate:now options:0];
+            NSInteger age = [ageComponents year];
+            NSString *edad = [[NSString alloc] initWithFormat:@"%ld", (long)age];
+
+            appDelegateLogin.edad = edad;
+            
+            NSLog(@"%@",appDelegateLogin.edad);
+            
             NSLog(@"%@",appDelegateLogin.matriculaGeneral);
             NSLog(@"%@", object.objectId);
             if (!object) {

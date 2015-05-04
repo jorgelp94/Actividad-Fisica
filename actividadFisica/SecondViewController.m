@@ -40,6 +40,7 @@
         self.tfEstaturaAjustes.text = object[@"estatura"];
         self.tfPesoAjustes.text = object[@"peso"];
         
+        
         //Fecha
         NSString *fechaNacimiento = object[@"fecha"];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

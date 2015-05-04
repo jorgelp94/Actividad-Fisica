@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BEMSimpleLineGraphView.h"
+@interface ViewControllerDesempenoAlumno : UIViewController <BEMSimpleLineGraphDataSource, BEMSimpleLineGraphDelegate>
 
-@interface ViewControllerDesempenoAlumno : UIViewController
+@property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *myGraph;
+@property NSMutableArray *pruebasAlumno;
+@property NSMutableArray *listaPruebas;
+
+@property NSArray *registro;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblDisplay;
+@property (weak, nonatomic) IBOutlet UILabel *lblFecha;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)refresh:(UISegmentedControl *)sender;
 
 @end
