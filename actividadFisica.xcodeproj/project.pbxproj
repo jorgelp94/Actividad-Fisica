@@ -32,6 +32,7 @@
 		F401F80C1ABE370300A8F025 /* ViewControllerEditarPruebas.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F80B1ABE370300A8F025 /* ViewControllerEditarPruebas.m */; };
 		F42C5E131AD9EEFD00834321 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42C5E111AD9EEFD00834321 /* Bolts.framework */; };
 		F42C5E141AD9EEFD00834321 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42C5E121AD9EEFD00834321 /* Parse.framework */; };
+		F45A221E1AF6F91200C38878 /* ViewControllerDesempenoAlumno.m in Sources */ = {isa = PBXBuildFile; fileRef = F45A221D1AF6F91200C38878 /* ViewControllerDesempenoAlumno.m */; };
 		F47BE2BC1ACBC15D00B18679 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47BE2BB1ACBC15D00B18679 /* AudioToolbox.framework */; };
 		F47BE2BE1ACBC16700B18679 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47BE2BD1ACBC16700B18679 /* CFNetwork.framework */; };
 		F47BE2C01ACBC17100B18679 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47BE2BF1ACBC17100B18679 /* CoreGraphics.framework */; };
@@ -108,6 +109,8 @@
 		F401F80B1ABE370300A8F025 /* ViewControllerEditarPruebas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEditarPruebas.m; sourceTree = "<group>"; };
 		F42C5E111AD9EEFD00834321 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		F42C5E121AD9EEFD00834321 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		F45A221C1AF6F91200C38878 /* ViewControllerDesempenoAlumno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDesempenoAlumno.h; sourceTree = "<group>"; };
+		F45A221D1AF6F91200C38878 /* ViewControllerDesempenoAlumno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDesempenoAlumno.m; sourceTree = "<group>"; };
 		F47BE2BB1ACBC15D00B18679 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F47BE2BD1ACBC16700B18679 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F47BE2BF1ACBC17100B18679 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -224,6 +227,8 @@
 				F4DE18291ABE4D9600D6DA85 /* ViewControllerEditarAjustes.h */,
 				F4DE182A1ABE4D9600D6DA85 /* ViewControllerEditarAjustes.m */,
 				F401F7DF1ABDF5E500A8F025 /* Main.storyboard */,
+				F45A221C1AF6F91200C38878 /* ViewControllerDesempenoAlumno.h */,
+				F45A221D1AF6F91200C38878 /* ViewControllerDesempenoAlumno.m */,
 				F4A0D6691AE8856A008870B7 /* BusquedaViewController.h */,
 				F4A0D66A1AE8856A008870B7 /* BusquedaViewController.m */,
 				F4E13DB81AD8FFC7002E08CE /* creaCuenta.png */,
@@ -396,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BED13361AF1804F00779642 /* BEMLine.m in Sources */,
+				F45A221E1AF6F91200C38878 /* ViewControllerDesempenoAlumno.m in Sources */,
 				2BED13261AF177A300779642 /* DetailPruebasViewController.m in Sources */,
 				2BED13381AF1804F00779642 /* BEMSimpleLineGraphView.m in Sources */,
 				F4A0D66B1AE8856A008870B7 /* BusquedaViewController.m in Sources */,

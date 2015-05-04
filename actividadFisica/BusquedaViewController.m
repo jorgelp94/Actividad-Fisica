@@ -8,6 +8,7 @@
 
 #import "BusquedaViewController.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface BusquedaViewController ()
 
@@ -36,6 +37,10 @@
 */
 
 - (IBAction)presionoBuscar:(UIButton *)sender {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    appDelegate.busqueda = self.buscaMatricula.text;
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
     [query whereKey:@"matricula" equalTo:self.buscaMatricula.text];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

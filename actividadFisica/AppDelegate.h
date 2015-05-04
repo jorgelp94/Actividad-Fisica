@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *matriculaGeneral;
 @property (strong, nonatomic) NSString *userArturo;
 @property (strong, nonatomic) NSString *passArturo;
+@property (strong, nonatomic) NSString *busqueda;
 
 @end
 
