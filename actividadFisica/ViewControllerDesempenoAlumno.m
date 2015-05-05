@@ -32,6 +32,7 @@
     self.myGraph.averageLine.color = [UIColor yellowColor];
     self.myGraph.averageLine.width = 2.5;
     self.myGraph.averageLine.dashPattern = @[@(2),@(2)];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -39,25 +40,33 @@
     //appDelegate.busqueda;
     [self.listaPruebas removeAllObjects];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Pruebas"];
-    [query whereKey:@"matricula" equalTo:appDelegate.busqueda];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                self.registro = [[NSArray alloc] initWithObjects:object[@"lagartijas"], object[@"abdominales"], object[@"milla"], object[@"flexibilidad"], object[@"fecha"], nil];
-                [self.listaPruebas addObject:self.registro];
-                NSLog(@"%@", self.registro);
+    if (appDelegate.busqueda) {
+        PFQuery *query = [PFQuery queryWithClassName:@"Pruebas"];
+        [query whereKey:@"matricula" equalTo:appDelegate.busqueda];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
+                // Do something with the found objects
+                for (PFObject *object in objects) {
+                    self.registro = [[NSArray alloc] initWithObjects:object[@"lagartijas"], object[@"abdominales"], object[@"milla"], object[@"flexibilidad"], object[@"fecha"], nil];
+                    [self.listaPruebas addObject:self.registro];
+                    NSLog(@"%@", self.registro);
+                }
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+        }];
+        
+        [self.myGraph reloadGraph];
+    }
+    else {
+        NSString *mensaje = [[NSString alloc] initWithFormat:@"Ingresa una matrícula primero"];
+        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Atención" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alerta show];
+    }
     
-    [self.myGraph reloadGraph];
 
 }
 
