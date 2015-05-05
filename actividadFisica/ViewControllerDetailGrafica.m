@@ -11,6 +11,7 @@
 @implementation ViewControllerDetailGrafica
 -(void)viewDidLoad{
     self.lblDatos.text = self.datos;
+    self.navigationItem.title = @"Información Resultados";
 }
 
 @end

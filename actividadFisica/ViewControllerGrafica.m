@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Progreso";
     // Do any additional setup after loading the view, typically from a nib.
     NSString *filePath = [self dataFilePath];
     if	([[NSFileManager defaultManager] fileExistsAtPath: filePath]){
@@ -72,25 +74,25 @@
             //HOMBRE
             if ([appDelegate.genero isEqualToString:@"Masculino"]){
                 if ([appDelegate.edad integerValue] < 35){ // <35
-                    mensaje = @"Excelente -> 60 \n Buena -> 45 \n Promedio -> 30 \n Deficiente -> 15";
+                    mensaje = @"Excelente -> 60 \nBuena -> 45 \nPromedio -> 30 \nDeficiente -> 15";
                 }
                 else if([appDelegate.edad integerValue] > 34 && [appDelegate.edad integerValue] < 45) { // 35-44
-                    mensaje = @"Excelente -> 50 \n Buena -> 40 \n Promedio -> 25 \n Deficiente -> 10";
+                    mensaje = @"Excelente -> 50 \nBuena -> 40 \nPromedio -> 25 \nDeficiente -> 10";
                 }
                 else{ //>45
-                    mensaje = @"Excelente -> 40 \n Buena -> 25 \n Promedio -> 15 \n Deficiente -> 5";
+                    mensaje = @"Excelente -> 40 \nBuena -> 25 \nPromedio -> 15 \nDeficiente -> 5";
                 }
             }
             //MUJER
             else{
                 if ([appDelegate.edad integerValue] < 35){ // <35
-                    mensaje = @"Excelente -> 50 \n Buena -> 40 \n Promedio -> 25 \n Deficiente -> 10";
+                    mensaje = @"Excelente -> 50 \nBuena -> 40 \nPromedio -> 25 \nDeficiente -> 10";
                 }
                 else if([appDelegate.edad integerValue] > 34 && [appDelegate.edad integerValue] < 45) { // 35-44
-                    mensaje = @"Excelente -> 40 \n Buena -> 25 \n Promedio -> 15 \n Deficiente -> 6";
+                    mensaje = @"Excelente -> 40 \nBuena -> 25 \nPromedio -> 15 \nDeficiente -> 6";
                 }
                 else{ //>45
-                    mensaje = @"Excelente -> 30 \n Buena -> 15 \n Promedio -> 10 \n Deficiente -> 4";
+                    mensaje = @"Excelente -> 30 \nBuena -> 15 \nPromedio -> 10 \nDeficiente -> 4";
                 }
             }
         }
@@ -101,37 +103,37 @@
             //HOMBRE
             if ([appDelegate.genero isEqualToString:@"Masculino"]){
                 if ([appDelegate.edad integerValue] < 30){ // <=29
-                    mensaje = @"Excelente -> +54 \n Buena -> 45-54 \n Promedio -> 34-44 \n Mala -> 20-34\n Muy Mala -> <20";
+                    mensaje = @"Excelente -> +54 \nBuena -> 45-54 \nPromedio -> 34-44 \nMala -> 20-34\nMuy Mala -> <20";
                 }
                 else if([appDelegate.edad integerValue] > 29 && [appDelegate.edad integerValue] < 40){ // 30-39
-                    mensaje = @"Excelente -> +44 \n Buena -> 35-34 \n Promedio -> 24-34 \n Mala -> 15-24\n Muy Mala -> <15";
+                    mensaje = @"Excelente -> +44 \nBuena -> 35-34 \nPromedio -> 24-34 \nMala -> 15-24\nMuy Mala -> <15";
                 }
                 else if([appDelegate.edad integerValue] > 39 && [appDelegate.edad integerValue] < 50){ // 40-49
-                    mensaje = @"Excelente -> +39 \n Buena -> 30-39 \n Promedio -> 20-29 \n Mala -> 12-19\n Muy Mala -> <12";
+                    mensaje = @"Excelente -> +39 \nBuena -> 30-39 \nPromedio -> 20-29 \nMala -> 12-19\n uy Mala -> <12";
                 }
                 else if([appDelegate.edad integerValue] > 49 && [appDelegate.edad integerValue] < 60){ // 50-59
-                    mensaje = @"Excelente -> +34 \n Buena -> 25-34 \n Promedio -> 15-24 \n Mala -> 8-14\n Muy Mala -> <8";
+                    mensaje = @"Excelente -> +34 \nBuena -> 25-34 \nPromedio -> 15-24 \nMala -> 8-14\nMuy Mala -> <8";
                 }
                 else{ //+60
-                    mensaje = @"Excelente -> +29 \n Buena -> 20-29 \n Promedio -> 10-19 \n Mala -> 5-9\n Muy Mala -> <5";
+                    mensaje = @"Excelente -> +29 \nBuena -> 20-29 \nPromedio -> 10-19 \nMala -> 5-9\nMuy Mala -> <5";
                 }
             }
             //MUJER
             else{
                 if ([appDelegate.edad integerValue] < 30){ // <=29
-                    mensaje = @"Excelente -> +48 \n Buena -> 34-48 \n Promedio -> 17-33 \n Mala -> 6-16\n Muy Mala -> <6";
+                    mensaje = @"Excelente -> +48 \nBuena -> 34-48 \nPromedio -> 17-33 \nMala -> 6-16\nMuy Mala -> <6";
                 }
                 else if([appDelegate.edad integerValue] > 29 && [appDelegate.edad integerValue] < 40){ // 30-39
-                    mensaje = @"Excelente -> +39 \n Buena -> 25-39 \n Promedio -> 12-24 \n Mala -> 4-11\n Muy Mala -> <4";
+                    mensaje = @"Excelente -> +39 \nBuena -> 25-39 \nPromedio -> 12-24 \nMala -> 4-11\nMuy Mala -> <4";
                 }
                 else if([appDelegate.edad integerValue] > 39 && [appDelegate.edad integerValue] < 50){ // 40-49
-                    mensaje = @"Excelente -> +34 \n Buena -> 20-34 \n Promedio -> 8-19 \n Mala -> 3-7\n Muy Mala -> <3";
+                    mensaje = @"Excelente -> +34 \nBuena -> 20-34 \nPromedio -> 8-19 \nMala -> 3-7\nMuy Mala -> <3";
                 }
                 else if([appDelegate.edad integerValue] > 49 && [appDelegate.edad integerValue] < 60){ // 50-59
-                    mensaje = @"Excelente -> +29 \n Buena -> 15-29 \n Promedio -> 6-14 \n Mala -> 2-5\n Muy Mala -> <2";
+                    mensaje = @"Excelente -> +29 \nBuena -> 15-29 \nPromedio -> 6-14 \nMala -> 2-5\nMuy Mala -> <2";
                 }
                 else{ //+60
-                    mensaje = @"Excelente -> +19 \n Buena -> 5-19 \n Promedio -> 3-4 \n Mala -> 1-2\n Muy Mala -> <2";
+                    mensaje = @"Excelente -> +19 \nBuena -> 5-19 \nPromedio -> 3-4 \nMala -> 1-2\nMuy Mala -> <2";
                 }
             }
         }
@@ -142,43 +144,43 @@
             //HOMBRE
             if ([appDelegate.genero isEqualToString:@"Masculino"]){
                 if ([appDelegate.edad integerValue] < 30){ // <=29
-                    mensaje = @"Excelente -> <11:54 \n Buena -> 11:54-13:00 \n Promedio -> 13:01-13:42 \n Mala -> 13:43-14:30\n Muy Mala -> +14:30";
+                    mensaje = @"Excelente -> <11:54 \nBuena -> 11:54-13:00 \nPromedio -> 13:01-13:42 \nMala -> 13:43-14:30\nMuy Mala -> +14:30";
                 }
                 else if ([appDelegate.edad integerValue] > 29 && [appDelegate.edad integerValue] < 40){
-                    mensaje = @"Excelente -> <12:24 \n Buena -> 12:24-13:30 \n Promedio -> 13:31-14:12 \n Mala -> 14:13-15:00\n Muy Mala -> +15:00";
+                    mensaje = @"Excelente -> <12:24 \nBuena -> 12:24-13:30 \nPromedio -> 13:31-14:12 \nMala -> 14:13-15:00\nMuy Mala -> +15:00";
                 }
                 else if ([appDelegate.edad integerValue] > 39 && [appDelegate.edad integerValue] < 50){
-                    mensaje = @"Excelente -> <12:54 \n Buena -> 12:54-14:00 \n Promedio -> 14:01-14:42 \n Mala -> 14:43-15:30\n Muy Mala -> +15:30";
+                    mensaje = @"Excelente -> <12:54 \nBuena -> 12:54-14:00 \nPromedio -> 14:01-14:42 \nMala -> 14:43-15:30\nMuy Mala -> +15:30";
                 }
                 else if ([appDelegate.edad integerValue] > 49 && [appDelegate.edad integerValue] < 60){
-                    mensaje = @"Excelente -> <13:24 \n Buena -> 13:24-14:24 \n Promedio -> 14:25-15:12 \n Mala -> 15:13-16:30\n Muy Mala -> +16:30";
+                    mensaje = @"Excelente -> <13:24 \nBuena -> 13:24-14:24 \nPromedio -> 14:25-15:12 \nMala -> 15:13-16:30\nMuy Mala -> +16:30";
                 }
                 else if ([appDelegate.edad integerValue] > 59 && [appDelegate.edad integerValue] < 70){
-                    mensaje = @"Excelente -> <14:06 \n Buena -> 14:06-15:12 \n Promedio -> 15:13-16:18 \n Mala -> 16:19-17:18\n Muy Mala -> +17:18";
+                    mensaje = @"Excelente -> <14:06 \nBuena -> 14:06-15:12 \nPromedio -> 15:13-16:18 \nMala -> 16:19-17:18\nMuy Mala -> +17:18";
                 }
                 else{ // +70
-                    mensaje = @"Excelente -> <15:06 \n Buena -> 15:06-15:48 \n Promedio -> 15:49-18:48 \n Mala -> 18:49-20:18\n Muy Mala -> +20:18";
+                    mensaje = @"Excelente -> <15:06 \nBuena -> 15:06-15:48 \nPromedio -> 15:49-18:48 \nMala -> 18:49-20:18\nMuy Mala -> +20:18";
                 }
             }
             //MUJER
             else{
                 if ([appDelegate.edad integerValue] < 30){ // <=29
-                    mensaje = @"Excelente -> <13:12 \n Buena -> 13:12-14:06 \n Promedio -> 14:07-15:06 \n Mala -> 15:07-16:30\n Muy Mala -> +16:30";
+                    mensaje = @"Excelente -> <13:12 \nBuena -> 13:12-14:06 \nPromedio -> 14:07-15:06 \nMala -> 15:07-16:30\nMuy Mala -> +16:30";
                 }
                 else if ([appDelegate.edad integerValue] > 29 && [appDelegate.edad integerValue] < 40){
-                    mensaje = @"Excelente -> <13:42 \n Buena -> 13:42-14:36 \n Promedio -> 14:37-15:36 \n Mala -> 15:37-17:00\n Muy Mala -> +17:00";
+                    mensaje = @"Excelente -> <13:42 \nBuena -> 13:42-14:36 \nPromedio -> 14:37-15:36 \nMala -> 15:37-17:00\nMuy Mala -> +17:00";
                 }
                 else if ([appDelegate.edad integerValue] > 39 && [appDelegate.edad integerValue] < 50){
-                    mensaje = @"Excelente -> <14:12 \n Buena -> 14:12-15:06 \n Promedio -> 15:07-16:06 \n Mala -> 16:07-17:30\n Muy Mala -> +17:30";
+                    mensaje = @"Excelente -> <14:12 \nBuena -> 14:12-15:06 \nPromedio -> 15:07-16:06 \nMala -> 16:07-17:30\nMuy Mala -> +17:30";
                 }
                 else if ([appDelegate.edad integerValue] > 49 && [appDelegate.edad integerValue] < 60){
-                    mensaje = @"Excelente -> <14:42 \n Buena -> 14:42-15:36 \n Promedio -> 15:37-17:00 \n Mala -> 17:01-18:06\n Muy Mala -> +18:06";
+                    mensaje = @"Excelente -> <14:42 \nBuena -> 14:42-15:36 \nPromedio -> 15:37-17:00 \nMala -> 17:01-18:06\nMuy Mala -> +18:06";
                 }
                 else if ([appDelegate.edad integerValue] > 59 && [appDelegate.edad integerValue] < 70){
-                    mensaje = @"Excelente -> <15:06 \n Buena -> 15:06-16:18 \n Promedio -> 16:19-17:30 \n Mala -> 17:31-19:12\n Muy Mala -> +19:12";
+                    mensaje = @"Excelente -> <15:06 \nBuena -> 15:06-16:18 \nPromedio -> 16:19-17:30 \nMala -> 17:31-19:12\nMuy Mala -> +19:12";
                 }
                 else{ // +70
-                    mensaje = @"Excelente -> <18:18 \n Buena -> 18:18-20:00 \n Promedio -> 20:01-21:48 \n Mala -> 21:49-24:06\n Muy Mala -> +24:06";
+                    mensaje = @"Excelente -> <18:18 \nBuena -> 18:18-20:00 \nPromedio -> 20:01-21:48 \nMala -> 21:49-24:06\nMuy Mala -> +24:06";
                 }
             }
         }
