@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B2DDB3C1AF8394F006DF027 /* ViewControllerDetailGrafica.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2DDB3B1AF8394F006DF027 /* ViewControllerDetailGrafica.m */; };
 		2B87D67E1AF280FB00832B02 /* pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B87D67D1AF280FB00832B02 /* pencil@2x.png */; };
 		2BED131A1AF16B4500779642 /* ViewControllerAgregar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED13191AF16B4500779642 /* ViewControllerAgregar.m */; };
 		2BED13231AF1741A00779642 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED13221AF1741900779642 /* MasterViewController.m */; };
@@ -64,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B2DDB3A1AF8394F006DF027 /* ViewControllerDetailGrafica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDetailGrafica.h; sourceTree = "<group>"; };
+		2B2DDB3B1AF8394F006DF027 /* ViewControllerDetailGrafica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDetailGrafica.m; sourceTree = "<group>"; };
 		2B87D67D1AF280FB00832B02 /* pencil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencil@2x.png"; sourceTree = "<group>"; };
 		2BED13181AF16B4500779642 /* ViewControllerAgregar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerAgregar.h; sourceTree = "<group>"; };
 		2BED13191AF16B4500779642 /* ViewControllerAgregar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAgregar.m; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 		F401F7D11ABDF5E400A8F025 /* actividadFisica */ = {
 			isa = PBXGroup;
 			children = (
+				2B2DDB3A1AF8394F006DF027 /* ViewControllerDetailGrafica.h */,
+				2B2DDB3B1AF8394F006DF027 /* ViewControllerDetailGrafica.m */,
 				2BED13391AF180BE00779642 /* ViewControllerGrafica.h */,
 				2BED133A1AF180BE00779642 /* ViewControllerGrafica.m */,
 				F45A221C1AF6F91200C38878 /* ViewControllerDesempenoAlumno.h */,
@@ -400,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2DDB3C1AF8394F006DF027 /* ViewControllerDetailGrafica.m in Sources */,
 				2BED13361AF1804F00779642 /* BEMLine.m in Sources */,
 				F45A221E1AF6F91200C38878 /* ViewControllerDesempenoAlumno.m in Sources */,
 				2BED13261AF177A300779642 /* DetailPruebasViewController.m in Sources */,
