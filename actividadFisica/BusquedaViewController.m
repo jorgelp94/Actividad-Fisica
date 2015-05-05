@@ -47,33 +47,40 @@
         if (!error) {
             // The find succeeded.
             NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                //NSLog(@"%@", object.objectId);
+            
+            if (objects.count == 0) {
+                NSString *mensaje = [[NSString alloc] initWithFormat:@"Matricula incorrecta o no existe"];
+                UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Atención" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alerta show];
+            } else {
+                // Do something with the found objects
+                for (PFObject *object in objects) {
+                    //NSLog(@"%@", object.objectId);
                 
-                [query getObjectInBackgroundWithId:object.objectId block:^(PFObject *usuario, NSError *error) {
-                    self.tfNombre.text = usuario[@"nombre"];
-                    self.tfMatricula.text = usuario[@"matricula"];
-                    self.tfEstatura.text = usuario[@"estatura"];
-                    self.tfPeso.text = usuario[@"peso"];
+                    [query getObjectInBackgroundWithId:object.objectId block:^(PFObject *usuario, NSError *error) {
+                        self.tfNombre.text = usuario[@"nombre"];
+                        self.tfMatricula.text = usuario[@"matricula"];
+                        self.tfEstatura.text = usuario[@"estatura"];
+                        self.tfPeso.text = usuario[@"peso"];
                     
-                    appDelegate.genero = usuario[@"genero"];
+                        appDelegate.genero = usuario[@"genero"];
                     
-                    NSString *fechaNacimiento = object[@"fecha"];
-                    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
-                    NSDate *nacimiento = [[NSDate alloc] init];
-                    nacimiento = [dateFormatter dateFromString:fechaNacimiento];
+                        NSString *fechaNacimiento = object[@"fecha"];
+                        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                        [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+                        NSDate *nacimiento = [[NSDate alloc] init];
+                        nacimiento = [dateFormatter dateFromString:fechaNacimiento];
                     
-                    NSDate *now = [NSDate date];
-                    NSDateComponents *ageComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:nacimiento toDate:now options:0];
-                    NSInteger age = [ageComponents year];
-                    NSString *edad = [[NSString alloc] initWithFormat:@"%ld", (long)age];
+                        NSDate *now = [NSDate date];
+                        NSDateComponents *ageComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:nacimiento toDate:now options:0];
+                        NSInteger age = [ageComponents year];
+                        NSString *edad = [[NSString alloc] initWithFormat:@"%ld", (long)age];
                     
-                    self.tfEdad.text = edad;
-                    appDelegate.edad = edad;
-                }];
+                        self.tfEdad.text = edad;
+                        appDelegate.edad = edad;
+                    }];
                 
+                }
             }
         } else {
             // Log details of the failure
