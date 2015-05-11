@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewControllerDetailGrafica : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *lblDatos;
-@property NSString *datos;
+@property (weak, nonatomic) IBOutlet UILabel *lblDatos; // donde despliega informacion
+@property NSString *datos;  // datos pasados
 @end

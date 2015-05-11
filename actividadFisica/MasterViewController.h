@@ -11,8 +11,8 @@
 
 @interface MasterViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *arregloRegistro;
-@property BOOL borrar;
+@property (nonatomic, strong) NSArray *arregloRegistro; // donde llega nuevo registro de ViewControllerAgrega
+
 
 @end
 

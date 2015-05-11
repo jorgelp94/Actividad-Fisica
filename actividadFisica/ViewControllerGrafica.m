@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Progreso";
-    // Do any additional setup after loading the view, typically from a nib.
+
     NSString *filePath = [self dataFilePath];
     if	([[NSFileManager defaultManager] fileExistsAtPath: filePath]){
         self.listaPruebas	=	[	[NSMutableArray alloc]	initWithContentsOfFile:	filePath];
@@ -29,14 +29,15 @@
         self.listaPruebas = [[NSMutableArray alloc]init];
     }
     
-    self.myGraph.animationGraphEntranceTime = 1; // la animacion de la grafica dura 3 segundos
+    /*
+     *  Configuracion de la grafica
+     */
+    self.myGraph.animationGraphEntranceTime = 1;
     self.myGraph.enablePopUpReport = YES;
     self.myGraph.enableTouchReport = YES;
     self.myGraph.enableReferenceXAxisLines = YES;
     self.myGraph.enableReferenceYAxisLines = YES;
 
-    
-    
     // Draw an average line
     self.myGraph.averageLine.enableAverageLine = YES;
     self.myGraph.averageLine.alpha = 0.6;
@@ -51,6 +52,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+ *  Obtiene el path de los datos dentro del iPhone
+ */
 -(NSString *) dataFilePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
     
@@ -60,7 +64,7 @@
 }
 
 /*
- *  SEGUE
+ *  SEGUE - lo que envia a ViewControllerDetailGrafica para que usuari compare resultados
  */
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -196,12 +200,15 @@
 }
 
 /*
- *  GRAFICA
+ *  GRAFICA - cantidad de muntos en la grafica
  */
 - (NSInteger)numberOfPointsInLineGraph:(BEMSimpleLineGraphView *)graph {
     return self.listaPruebas.count; // Number of points in the graph.
 }
 
+/*
+ *  GRAFICA - pone los puntos y las lineas promedio de cada vista
+ */
 - (CGFloat)lineGraph:(BEMSimpleLineGraphView *)graph valueForPointAtIndex:(NSInteger)index {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     //            self.myGraph.averageLine.yValue = 50.0;
@@ -342,7 +349,9 @@
     }
 }
 
-
+/*
+ *  GRAFICA - string que va en parte inferior de la grafica
+ */
 - (NSString *)lineGraph:(BEMSimpleLineGraphView *)graph labelOnXAxisForIndex:(NSInteger)index{
     
     if ((index % 2) == 1){
@@ -358,6 +367,9 @@
     }
 }
 
+/*
+ *  GRAFICA - para que cuando el usuario toque alguna parte de la grafica desplegar resultado mas cercano
+ */
 - (void)lineGraph:(BEMSimpleLineGraphView *)graph didTouchGraphWithClosestIndex:(NSInteger)index {
     if (self.segmentedControl.selectedSegmentIndex == 0){
         self.lblDisplay.text = [[self.listaPruebas objectAtIndex:index] objectAtIndex:0];
@@ -380,6 +392,9 @@
     self.lblFecha.text = stringFormateado;
 }
 
+/*
+ *  GRAFICA - cuando no este tocando la grafica
+ */
 - (void)lineGraph:(BEMSimpleLineGraphView *)graph didReleaseTouchFromGraphWithClosestIndex:(CGFloat)index {
     self.lblDisplay.text = @"---";
     self.lblFecha.text = @"--";

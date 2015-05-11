@@ -10,6 +10,10 @@
 
 @implementation ViewControllerDetailGrafica
 -(void)viewDidLoad{
+    
+    /*
+     *  Despliega datos que le paso ViewControllerGrafica para que usuario compare sus resultados
+     */
     self.lblDatos.text = self.datos;
     self.navigationItem.title = @"Información Resultados";
 }

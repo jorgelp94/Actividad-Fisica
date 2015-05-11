@@ -11,6 +11,7 @@
 
 @interface MasterViewController ()
 
+// arreglo donde se guardan arreglos con los resultados de las pruebas
 @property NSMutableArray *listaPruebas;
 @end
 
@@ -25,25 +26,14 @@
     
     self.title = @"Registro";
     
-    self.borrar = NO;   // no se quiere borrar un elemento de la lista
-    
-    // Init with objects recibe bjetos separados por coma y termina en nil o nulo
-    //self.listaPruebas = [[NSMutableArray alloc]init];
-    
+    // extrae lo que esta uardado en el iPhone y lo agrega a listaPruebas, sino hay nada crea una nueva
     NSString *filePath = [self dataFilePath];
     if	([[NSFileManager defaultManager] fileExistsAtPath: filePath]){
         self.listaPruebas	=	[	[NSMutableArray alloc]	initWithContentsOfFile:	filePath];
-        //self.listaPruebas = [[NSMutableArray alloc]init];
-        //[self.listaPruebas setArray:array];
     }
     else{
         self.listaPruebas = [[NSMutableArray alloc]init];
     }
-    
-    //UIApplication *app=[UIApplication sharedApplication];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(aplicacionTerminara:)	 name: UIApplicationDidEnterBackgroundNotification object:app];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +47,6 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.listaPruebas removeObjectAtIndex:indexPath.row];
     [self.listaPruebas writeToFile:[self dataFilePath] atomically: YES];
@@ -66,7 +55,9 @@
 
 
 #pragma mark - Segues
-
+/*
+ *  envia informacion al detail
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -76,13 +67,13 @@
     
 }
 
+/*
+ * cuando regresa de ViewControllerAgregar
+ */
 
 - (IBAction)unwindAgregar:(UIStoryboardSegue *)segue{
-    
-    
-    [self.listaPruebas addObject:self.arregloRegistro];
-    
-    [self.listaPruebas writeToFile:[self dataFilePath] atomically: YES];
+    [self.listaPruebas addObject:self.arregloRegistro]; // agrega nuevo registo a listaPruebas
+    [self.listaPruebas writeToFile:[self dataFilePath] atomically: YES];    // escribe nueva listaPruebas a iPhone
     [self.tableView reloadData];
     
 }
@@ -97,41 +88,31 @@
     return self.listaPruebas.count;
 }
 
+/*
+ *  Escribe en cada renglon de la TableView
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    
     NSArray *object = self.listaPruebas[indexPath.row];
+    // convierte fecha a string
     NSDateFormatter *formatoFecha = [[NSDateFormatter alloc ]init];
     [formatoFecha setDateStyle: NSDateFormatterMediumStyle];
     NSString *stringFormateado = [formatoFecha stringFromDate:[object objectAtIndex:4]];
     
     cell.textLabel.text = stringFormateado;
-    //cell.textLabel.text = [object objectAtIndex:0];
     return cell;
 }
 
-
-
-
-
-/**
- *
- **/
+/*
+ *  Obtiene el Path de los datos dentro del iphone
+ */
 
 -(NSString *) dataFilePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-    
     NSString *documentsDirectory = [paths objectAtIndex: 0];
     NSLog(@"%@",[documentsDirectory stringByAppendingPathComponent:@"archivoDatos.plist"]);
     return	[documentsDirectory stringByAppendingPathComponent:@"archivoDatos.plist"];
 }
-
-//-(void) aplicacionTerminara: (NSNotification *) notification{
-
-//}
-
-
-
 
 @end

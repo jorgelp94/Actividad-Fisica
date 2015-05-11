@@ -15,6 +15,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /*
+     *  Carga en los labels la informacion pasada por MasterViewController
+     */
     self.tfLag.text = [self.detailItem objectAtIndex:0];
     self.tfAbd.text = [self.detailItem objectAtIndex:1];
     self.tfMilla.text = [self.detailItem objectAtIndex:2];

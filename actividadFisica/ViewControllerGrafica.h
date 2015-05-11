@@ -11,13 +11,11 @@
 
 
 @interface ViewControllerGrafica : UIViewController <BEMSimpleLineGraphDataSource, BEMSimpleLineGraphDelegate>
-@property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *myGraph;
+@property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *myGraph;   // en donde se ve la grafica
 @property (strong, nonatomic) NSArray *arrayOfValues;
-@property (weak, nonatomic) IBOutlet UILabel *lblDisplay;
-@property (weak, nonatomic) IBOutlet UILabel *lblFecha;
-
+@property (weak, nonatomic) IBOutlet UILabel *lblDisplay;   // label despliega resultado prueba
+@property (weak, nonatomic) IBOutlet UILabel *lblFecha; // label despliega fecha prueba
 @property NSMutableArray *listaPruebas;
-
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 - (IBAction)refresh:(UISegmentedControl *)sender;
 
