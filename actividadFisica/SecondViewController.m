@@ -20,19 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    // Carga informacion de la plist
-//    NSString *filePath = [self dataFilePath];
-//    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-//        NSArray *array = [[NSArray alloc] initWithContentsOfFile:filePath];
-//        self.tfNombreAjustes.text = [array objectAtIndex:2];
-//        self.tfMatriculaAjustes.text = [array objectAtIndex:0];
-//        self.tfEstaturaAjustes.text = [array objectAtIndex:4];
-//        self.tfPesoAjustes.text = [array objectAtIndex:5];
-//    }
+
     AppDelegate *appDelegateSecond = [[UIApplication sharedApplication] delegate];
     
+    // Carga los datos de la base de datos de Usuario tomando la matrícula como referencia
     PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
     [query getObjectInBackgroundWithId:appDelegateSecond.generalID block:^(PFObject *object, NSError *error) {
         self.tfNombreAjustes.text = object[@"nombre"];
@@ -62,6 +53,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Envía la información a editar
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     ViewControllerEditarAjustes *viewEditar = [segue destinationViewController];
     
@@ -69,6 +61,7 @@
     viewEditar.pesoEd = self.tfPesoAjustes.text;
 }
 
+// Recibe información que se editó en viewControllerEditarAjustes
 - (IBAction)unwindEditarAjustes:(UIStoryboardSegue *)segue {
     self.tfPesoAjustes.text = self.pesoAj;
     self.imagenAjustes.image = self.imagenAj;

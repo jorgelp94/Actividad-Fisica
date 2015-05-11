@@ -22,11 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Gestura para quitar el teclado de la pantalla al dar tap
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quitaTeclado)];
     [self.view addGestureRecognizer:tap];
     
     AppDelegate *appDelegateVar = [[UIApplication sharedApplication] delegate];
+    
+    // Usuario y contraseña de administrador
     appDelegateVar.userArturo = @"L00888888";
     appDelegateVar.passArturo = @"arturo";
 }
@@ -54,10 +56,13 @@
     
     AppDelegate *appDelegateLogin = [[UIApplication sharedApplication] delegate];
     
+    //Verifica si es el usuario y contraseña del administrador
     if ([self.loginMatricula.text isEqualToString:appDelegateLogin.userArturo] && [self.loginPassword.text isEqualToString:appDelegateLogin.passArturo]) {
         [self performSegueWithIdentifier:@"administrador" sender:sender];
     } else {
-    
+        
+    // Si no es el administrador, verifica que el usuario y contraseña tecleados
+    // existan en la base de datos
         NSString *mat = [[NSString alloc] initWithFormat:@"%@", self.loginMatricula.text];
         NSString *pas = [[NSString alloc] initWithFormat:@"%@", self.loginPassword.text];
         PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];

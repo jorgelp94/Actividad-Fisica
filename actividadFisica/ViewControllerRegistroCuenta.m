@@ -9,7 +9,6 @@
 #import "ViewControllerRegistroCuenta.h"
 #import "Usuario.h"
 #import <Parse/Parse.h>
-#import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "AppDelegate.h"
 
@@ -35,19 +34,12 @@ Usuario *nuevoUsuario;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Gestura para quitar el teclado de la pantalla al dar tap
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quitaTeclado)];
     [self.view addGestureRecognizer:tap];
     
     [self registerForKeyboardNotifications];
     
-    // La aplicación guarda la información cuando se cierra
-    // Esta información se va cargar posteriormente en la vista para modificacion de información
-    UIApplication *app = [UIApplication sharedApplication];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(aplicacionTerminara:) name:UIApplicationDidEnterBackgroundNotification object:app];
-    self.idUsuarioActual = @"";
-    
-
     //Muestra el datePicker en lugar del teclado
     UIDatePicker *datePicker = [[UIDatePicker alloc]init];
     datePicker.datePickerMode = UIDatePickerModeDate;
@@ -120,7 +112,7 @@ Usuario *nuevoUsuario;
 - (IBAction)presionoCrear:(UIButton *)sender {
     
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    
+        // Verifica que todos los campos contentan información para crear la cuenta
         if ([self.tfNombre.text isEqualToString:@""] || [self.tfMatricula.text isEqualToString:@""] || [self.tfPassword.text isEqualToString:@""] || [self.tfPeso.text isEqualToString:@""]|| [self.tfFecha.text isEqualToString:@""] || [self.tfEstatura.text isEqualToString:@""] || [self.tfGenero.text isEqualToString:@""]) {
     
             NSString *mensaje = [[NSString alloc] initWithFormat:@"Llena todos los campos."];
@@ -130,9 +122,13 @@ Usuario *nuevoUsuario;
         }
     
         else {
+            
+            // Si todos los campos están llenos, se crea la cuenta
+            
+            // Tipo de objeto que almacena el usuario
             PFObject *usuario = [PFObject objectWithClassName:@"Usuario"];
             
-            // Validar matricula uq no exista una igual en la base de datos
+            // Validar matricula que no exista una igual en la base de datos
             PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
             [query whereKey:@"matricula" equalTo:self.tfMatricula.text];
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -161,9 +157,8 @@ Usuario *nuevoUsuario;
                         NSInteger age = [ageComponents year];
                         NSString *edad = [[NSString alloc] initWithFormat:@"%ld", (long)age];
                         
-                        appDelegate.edad = edad;
+                        appDelegate.edad = edad; //Asignar la matricula tecleada a una variable global
 
-                        
                         
                         [usuario save];
                         
@@ -195,6 +190,7 @@ Usuario *nuevoUsuario;
         }
 }
 
+//Método para agregar imagen
 - (IBAction)agregarImagen:(UIButton *)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -231,7 +227,7 @@ Usuario *nuevoUsuario;
     [listaDatos writeToFile:[self dataFilePath] atomically:YES];
 }
 
-
+// métodos para actualizar el texto del campo donde hay un picker
 -(void)updateTextField:(id)sender
 {
     UIDatePicker *picker = (UIDatePicker*)self.tfFecha.inputView;
@@ -347,6 +343,7 @@ Usuario *nuevoUsuario;
     
 }
 
+// carga los datos que se van a mostrar en el picker
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if (pickerView == self.genderPicker) {

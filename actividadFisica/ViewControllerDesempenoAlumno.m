@@ -40,9 +40,10 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    //appDelegate.busqueda;
     [self.listaPruebas removeAllObjects];
     
+    // Hace un query a la base de datos en la tabla de pruebas utilizando
+    // la matrícula tecleada en BusquedaViewController
     if (appDelegate.busqueda) {
         PFQuery *query = [PFQuery queryWithClassName:@"Pruebas"];
         [query whereKey:@"matricula" equalTo:appDelegate.busqueda];

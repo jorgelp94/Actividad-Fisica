@@ -16,9 +16,15 @@
 
 @implementation BusquedaViewController
 
+- (void) quitaTeclado {
+    [self.view endEditing:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Gestura para quitar el teclado de la pantalla al dar tap
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quitaTeclado)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +47,7 @@
     
     appDelegate.busqueda = self.buscaMatricula.text;
     
+    //Carga la información del usuario con la matrícula tecleada en el campo
     PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
     [query whereKey:@"matricula" equalTo:self.buscaMatricula.text];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -48,6 +55,7 @@
             // The find succeeded.
             NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
             
+            // Si  no regresa ningún objeto, significa que no existe en la base de datos
             if (objects.count == 0) {
                 NSString *mensaje = [[NSString alloc] initWithFormat:@"Matricula incorrecta o no existe"];
                 UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Atención" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];

@@ -23,10 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Gestura para quitar el teclado de la pantalla al dar tap
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quitaTeclado)];
     [self.view addGestureRecognizer:tap];
     
+    // Inicializa los objetos con la información obtenida de SecondViewController
     self.imagenEditarAjustes.image = self.imagenEd;
     self.tfEditarPeso.text = self.pesoEd;
 }
@@ -43,12 +44,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if (sender == self.botonGuardar) {
         SecondViewController *secondView = [segue destinationViewController];
-        
+        // Envía la imagen y el peso que se editaron
         secondView.pesoAj = self.tfEditarPeso.text;
         secondView.imagenAj = self.imagenEditarAjustes.image;
         
         AppDelegate *appDelegateEditar = [[UIApplication sharedApplication] delegate];
         
+        //Actualiza el peso en la base de datos
         PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
         [query whereKey:@"objectId" equalTo:appDelegateEditar.generalID];
         [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
@@ -63,7 +65,7 @@
     }
 }
 
-
+//Funcion para cambiar la imagen
 - (IBAction)cambiarImagen:(UIButton *)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;

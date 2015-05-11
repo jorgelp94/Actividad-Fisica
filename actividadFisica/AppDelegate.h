@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+// Variables globales
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *generalID;
 @property (strong, nonatomic) NSString *matriculaGeneral;

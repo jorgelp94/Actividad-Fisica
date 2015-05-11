@@ -20,7 +20,6 @@
 		2BED133B1AF180BE00779642 /* ViewControllerGrafica.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BED133A1AF180BE00779642 /* ViewControllerGrafica.m */; };
 		F401F7D51ABDF5E400A8F025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7D41ABDF5E400A8F025 /* main.m */; };
 		F401F7D81ABDF5E400A8F025 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7D71ABDF5E400A8F025 /* AppDelegate.m */; };
-		F401F7DB1ABDF5E400A8F025 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7DA1ABDF5E400A8F025 /* FirstViewController.m */; };
 		F401F7DE1ABDF5E500A8F025 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7DD1ABDF5E500A8F025 /* SecondViewController.m */; };
 		F401F7E11ABDF5E500A8F025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F401F7DF1ABDF5E500A8F025 /* Main.storyboard */; };
 		F401F7E31ABDF5E500A8F025 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F401F7E21ABDF5E500A8F025 /* Images.xcassets */; };
@@ -30,7 +29,6 @@
 		F401F8001ABDFE7200A8F025 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F7FF1ABDFE7200A8F025 /* Usuario.m */; };
 		F401F8031ABE13E600A8F025 /* ViewControllerLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F8021ABE13E600A8F025 /* ViewControllerLogin.m */; };
 		F401F8051ABE16D200A8F025 /* logoTec.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F401F8041ABE16D200A8F025 /* logoTec.jpg */; };
-		F401F80C1ABE370300A8F025 /* ViewControllerEditarPruebas.m in Sources */ = {isa = PBXBuildFile; fileRef = F401F80B1ABE370300A8F025 /* ViewControllerEditarPruebas.m */; };
 		F42C5E131AD9EEFD00834321 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42C5E111AD9EEFD00834321 /* Bolts.framework */; };
 		F42C5E141AD9EEFD00834321 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42C5E121AD9EEFD00834321 /* Parse.framework */; };
 		F45A221E1AF6F91200C38878 /* ViewControllerDesempenoAlumno.m in Sources */ = {isa = PBXBuildFile; fileRef = F45A221D1AF6F91200C38878 /* ViewControllerDesempenoAlumno.m */; };
@@ -91,8 +89,6 @@
 		F401F7D41ABDF5E400A8F025 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F401F7D61ABDF5E400A8F025 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F401F7D71ABDF5E400A8F025 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F401F7D91ABDF5E400A8F025 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		F401F7DA1ABDF5E400A8F025 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		F401F7DC1ABDF5E500A8F025 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		F401F7DD1ABDF5E500A8F025 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		F401F7E01ABDF5E500A8F025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,8 +104,6 @@
 		F401F8011ABE13E600A8F025 /* ViewControllerLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerLogin.h; sourceTree = "<group>"; };
 		F401F8021ABE13E600A8F025 /* ViewControllerLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLogin.m; sourceTree = "<group>"; };
 		F401F8041ABE16D200A8F025 /* logoTec.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logoTec.jpg; sourceTree = "<group>"; };
-		F401F80A1ABE370300A8F025 /* ViewControllerEditarPruebas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEditarPruebas.h; sourceTree = "<group>"; };
-		F401F80B1ABE370300A8F025 /* ViewControllerEditarPruebas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEditarPruebas.m; sourceTree = "<group>"; };
 		F42C5E111AD9EEFD00834321 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		F42C5E121AD9EEFD00834321 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		F45A221C1AF6F91200C38878 /* ViewControllerDesempenoAlumno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDesempenoAlumno.h; sourceTree = "<group>"; };
@@ -221,10 +215,6 @@
 				2BED13251AF177A300779642 /* DetailPruebasViewController.m */,
 				2BED13211AF1741900779642 /* MasterViewController.h */,
 				2BED13221AF1741900779642 /* MasterViewController.m */,
-				F401F7D91ABDF5E400A8F025 /* FirstViewController.h */,
-				F401F7DA1ABDF5E400A8F025 /* FirstViewController.m */,
-				F401F80A1ABE370300A8F025 /* ViewControllerEditarPruebas.h */,
-				F401F80B1ABE370300A8F025 /* ViewControllerEditarPruebas.m */,
 				F401F7DC1ABDF5E500A8F025 /* SecondViewController.h */,
 				F401F7DD1ABDF5E500A8F025 /* SecondViewController.m */,
 				F4DE18291ABE4D9600D6DA85 /* ViewControllerEditarAjustes.h */,
@@ -414,14 +404,12 @@
 				2BED13371AF1804F00779642 /* BEMPermanentPopupView.m in Sources */,
 				F401F8031ABE13E600A8F025 /* ViewControllerLogin.m in Sources */,
 				F401F7DE1ABDF5E500A8F025 /* SecondViewController.m in Sources */,
-				F401F80C1ABE370300A8F025 /* ViewControllerEditarPruebas.m in Sources */,
 				2BED13351AF1804F00779642 /* BEMCircle.m in Sources */,
 				2BED13231AF1741A00779642 /* MasterViewController.m in Sources */,
 				F401F7FD1ABDFACC00A8F025 /* ViewControllerRegistroCuenta.m in Sources */,
 				2BED133B1AF180BE00779642 /* ViewControllerGrafica.m in Sources */,
 				F401F7D81ABDF5E400A8F025 /* AppDelegate.m in Sources */,
 				2BED13341AF1804F00779642 /* BEMAverageLine.m in Sources */,
-				F401F7DB1ABDF5E400A8F025 /* FirstViewController.m in Sources */,
 				F401F8001ABDFE7200A8F025 /* Usuario.m in Sources */,
 				F401F7D51ABDF5E400A8F025 /* main.m in Sources */,
 				2BED131A1AF16B4500779642 /* ViewControllerAgregar.m in Sources */,
